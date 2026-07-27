@@ -15,6 +15,8 @@ import {
   Sparkles,
   Target,
   Users,
+  Mic,
+  
 } from "lucide-react";
 
 export const BUSINESS = {
@@ -30,15 +32,15 @@ export const BUSINESS = {
 
 export type Program = { icon: LucideIcon; title: string; benefit: string; description: string };
 export const PROGRAMS: Program[] = [
-  { icon: FileText, title: "Resume Building", benefit: "Get 3x more interview calls", description: "Craft a recruiter-friendly resume that showcases your strengths, projects, and impact in one clean page." },
-  { icon: ShieldCheck, title: "ATS Resume Review", benefit: "Pass automated filters", description: "We audit your resume against real ATS rules — keywords, formatting, sections — so it never gets silently rejected." },
-  { icon: Linkedin, title: "LinkedIn Optimization", benefit: "Appear in recruiter searches", description: "Rewrite your headline, About, and Experience so recruiters actually find you and reach out first." },
-  { icon: MessageSquare, title: "Mock Interviews", benefit: "Crack interviews confidently", description: "1:1 mock sessions with detailed feedback on body language, tone, structure, and content." },
-  { icon: Users, title: "Group Discussions", benefit: "Ace campus GD rounds", description: "Practice with real prompts, learn to lead without dominating, and stand out in the top 3." },
-  { icon: Layers, title: "Technical Interview Prep", benefit: "Clear technical rounds", description: "Chemical Engineering student passionate about process optimization, sustainable technologies, and industrial innovation." },
-  { icon: Presentation, title: "HR Interview Preparation", benefit: "Win HR rounds", description: "Frameworks for the tough behavioural questions, salary talk, and 'why should we hire you'." },
-  { icon: Target, title: "Career Guidance", benefit: "Choose the right path", description: "Confused between roles, higher studies, or startups? Get honest, unbiased 1:1 advice." },
-  { icon: Rocket, title: "Placement Strategy", benefit: "Maximize offer chances", description: "A personalized plan across companies, roles, timelines, and referrals — so nothing is left to luck." },
+  { icon: FileText, title: "Resume Building📄", benefit: "Get 3x more interview calls ", description: "Craft a recruiter-friendly resume that showcases your strengths, projects, and impact in one clean page." },
+  { icon: ShieldCheck, title: "ATS Resume Review✅", benefit: "Pass automated filters", description: "We audit your resume against real ATS rules — keywords, formatting, sections — so it never gets silently rejected." },
+  { icon: Linkedin, title: "LinkedIn Optimization💼", benefit: "Appear in recruiter searches", description: "Rewrite your headline, About, and Experience so recruiters actually find you and reach out first." },
+  { icon: MessageSquare, title: "Mock Interviews🎤", benefit: "Crack interviews confidently", description: "1:1 mock sessions with detailed feedback on body language, tone, structure, and content." },
+  { icon: Users, title: "Group Discussions👥", benefit: "Ace campus GD rounds", description: "Practice with real prompts, learn to lead without dominating, and stand out in the top 3." },
+  { icon: Layers, title: "Technical Interview Prep💻", benefit: "Clear technical rounds", description: "Chemical Engineering student passionate about process optimization, sustainable technologies, and industrial innovation." },
+  { icon: Presentation, title: "HR Interview Preparation💼", benefit: "Win HR rounds", description: "Frameworks for the tough behavioural questions, salary talk, and 'why should we hire you'." },
+  { icon: Target, title: "Career Guidance🎯", benefit: "Choose the right path", description: "Confused between roles, higher studies, or startups? Get honest, unbiased 1:1 advice." },
+  { icon: Rocket, title: "Placement Strategy🚀", benefit: "Maximize offer chances", description: "A personalized plan across companies, roles, timelines, and referrals — so nothing is left to luck." },
 ];
 
 export type Why = { icon: LucideIcon; title: string; desc: string };
@@ -52,12 +54,12 @@ export const WHY_CHOOSE: Why[] = [
 ];
 
 export const VALUES: Why[] = [
-  { icon: Sparkles, title: "Innovation", desc: "We keep evolving our methods with what's actually working in hiring today." },
-  { icon: ShieldCheck, title: "Integrity", desc: "Honest advice — even when it isn't what you want to hear." },
-  { icon: Users, title: "Student-First", desc: "Every decision is measured against one question: does this help students?" },
-  { icon: Target, title: "Results-Driven", desc: "We track outcomes, not vanity metrics." },
-  { icon: Briefcase, title: "Accessibility", desc: "Great mentorship shouldn't be locked behind big-city price tags." },
-  { icon: Award, title: "Excellence", desc: "We ship real quality — in content, sessions, and support." },
+  { icon: Sparkles, title: "Innovation", desc: "We embrace new technologies, AI tools, and modern hiring practices to keep students ahead." },
+  { icon: ShieldCheck, title: "Integrity", desc: "We believe in honest guidance, constructive feedback, and ethical mentorship." },
+  { icon: Users, title: "Student-First", desc: "Every decision begins with one question: Will this genuinely help our students grow?" },
+  { icon: Target, title: "Growth Mindset", desc: "We encourage continuous learning, resilience, and improvement throughout every student's journey" },
+  { icon: Briefcase, title: "Accessibility", desc: "Quality mentorship should be available to every aspiring engineer, regardless of location or background." },
+  { icon: Award, title: "Excellence", desc: "We continuously improve our programs to deliver meaningful learning experiences." },
 ];
 
 export const JOURNEY = [
@@ -81,22 +83,22 @@ export type Plan = {
 export const PLANS: Plan[] = [
   { name: "Free Trial", price: "FREE", cadence: "", tagline: "See what we do, no strings attached.", features: ["1 Resume review", "1 Career guidance session", "WhatsApp community access"], cta: "Start Free" },
   { name: "Solo", price: "₹2250", cadence: "/Student", tagline: "For serious individual prep.", features: ["Everything in Free", "Full resume + ATS + LinkedIn", "2 Mock interviews / month", "WhatsApp mentor support"], cta: "Get Started" },
-  { name: "Buddy", price: "₹2050", cadence: "/Student", tagline: "Prep with a friend, save more.", highlight: "10% off per student", features: ["Everything in Solo", "4 Mock interviews / month", "Priority scheduling", "10% per-student discount"], cta: "Get Started" },
-  { name: "Squad", price: "₹1950", cadence: "/Student", tagline: "Best per-student value for teams of 4+.", highlight: "Best value", features: ["Everything in Buddy", "Group GD training", "Referral discount", "Dedicated squad mentor"], cta: "Get Started" },
+  { name: "Buddy", price: "₹2050", cadence: "/Student", tagline: "Prep with a friend, save more.", highlight: "Save ₹200", features: ["Everything in Solo", "4 Mock interviews / month", "Priority scheduling", "Save ₹200 with buddy plan"], cta: "Get Started" },
+  { name: "Squad", price: "₹1950", cadence: "/Student", tagline: "Best per-student value for teams of 4+.", highlight: "⭐ Most Popular Save ₹300", features: ["Everything in Buddy", "Group GD training", "Referral discount", "Dedicated squad mentor"], cta: "Get Started" },
 ];
 
 export const PRICING_FEATURES: { feature: string; free: boolean; solo: boolean; buddy: boolean; squad: boolean }[] = [
-  { feature: "Resume Building", free: true, solo: true, buddy: true, squad: true },
-  { feature: "ATS Review", free: false, solo: true, buddy: true, squad: true },
-  { feature: "LinkedIn Optimization", free: false, solo: true, buddy: true, squad: true },
-  { feature: "Mock Interviews (HR)", free: false, solo: true, buddy: true, squad: true },
-  { feature: "Technical Interview Prep", free: false, solo: true, buddy: true, squad: true },
-  { feature: "Group Discussion Training", free: false, solo: false, buddy: true, squad: true },
-  { feature: "Career Guidance Sessions", free: true, solo: true, buddy: true, squad: true },
-  { feature: "Placement Strategy", free: false, solo: true, buddy: true, squad: true },
-  { feature: "WhatsApp Mentor Support", free: false, solo: true, buddy: true, squad: true },
-  { feature: "Priority Mentor Access", free: false, solo: false, buddy: true, squad: true },
-  { feature: "Referral Discount", free: false, solo: false, buddy: false, squad: true },
+  { feature: "ATS Resume Building📄", free: true, solo: true, buddy: true, squad: true },
+  { feature: "ATS Review✅", free: false, solo: true, buddy: true, squad: true },
+  { feature: "LinkedIn Optimization💼", free: false, solo: true, buddy: true, squad: true },
+  { feature: "Mock Interviews (HR)🎤", free: false, solo: true, buddy: true, squad: true },
+  { feature: "Technical Interview Prep💻", free: false, solo: true, buddy: true, squad: true },
+  { feature: "Group Discussion Training👥", free: false, solo: false, buddy: true, squad: true },
+  { feature: "Career Guidance Sessions🎯", free: true, solo: true, buddy: true, squad: true },
+  { feature: "Placement Strategy🚀", free: false, solo: true, buddy: true, squad: true },
+  { feature: "WhatsApp Mentor Support💬", free: false, solo: true, buddy: true, squad: true },
+  { feature: "Priority Mentor Access⭐", free: false, solo: false, buddy: true, squad: true },
+  { feature: "Referral Discount🎁", free: false, solo: false, buddy: false, squad: true },
 ];
 
 export type Testimonial = { name: string; college: string; quote: string };
@@ -124,7 +126,7 @@ export const FAQS: FaqCategory[] = [
     category: "Eligibility & Programs",
     items: [
       { q: "Which years of study can join?", a: "Anyone from 1st year to final year, plus recent graduates. Earlier is better — you get more time to build." },
-      { q: "Do you support non-tech students?", a: "Yes. chemical Engineer and other disciplines are welcome. We tailor the program to your target roles." },
+      { q: "Do you support non-tech students?", a: "Yes. chemical Engineers, fresh graduates and other disciplines are welcome. We tailor the program to your target roles." },
       { q: "Can I pick individual programs?", a: "Absolutely. You can start with Resume Building or Mock Interviews on their own, or combine them under a plan." },
       { q: "How long does a program take?", a: "Most programs run over 2–6 weeks. Placement strategy plans span your active placement season." },
     ],
@@ -132,10 +134,12 @@ export const FAQS: FaqCategory[] = [
   {
     category: "Pricing & Registration",
     items: [
+      { q: "Why Solo, Buddy and Squad?", a: "Each plan offers the same quality training, with pricing and learning formats tailored to different needs." },
       { q: "Is there really a free trial?", a: "Yes. You get a real resume review and a career guidance session at no cost, so you can decide before paying anything." },
       { q: "How do I register?", a: "Fill out the registration form on our Contact page, or WhatsApp us. A mentor will reach out within 24 hours." },
       { q: "Do you offer refunds?", a: "If you're not satisfied after your first paid session, tell us — we'll make it right." },
       { q: "Do you offer group discounts?", a: "Yes. Buddy plans get 10% off per student and Squad plans offer the best per-student value." },
+      
     ],
   },
   {
@@ -157,7 +161,7 @@ export const FAQS: FaqCategory[] = [
   {
     category: "Technical & Career",
     items: [
-      { q: "Do you cover DSA?", a: "Yes — plus core CS, system design basics for freshers, and role-specific topics like SQL, Excel, or case interviews." },
+      { q: "Which companies recruit Chemical Engineering students ?", a: "Chemical Engineering graduates can apply to companies in oil & gas, petrochemicals, fertilizers, pharmaceuticals, FMCG, food processing, energy, and specialty chemicals." },
       { q: "I'm confused about my career direction. Can you help?", a: "That's exactly what our Career Guidance program is for. We start from your interests and constraints, not a template." },
       { q: "Do you help with off-campus roles?", a: "Yes. Our Placement Strategy plan covers off-campus applications, referrals, and interview cadence." },
     ],

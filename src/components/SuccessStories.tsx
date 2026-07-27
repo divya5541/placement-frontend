@@ -9,6 +9,19 @@ import std3 from "../assets/mansi.png";
 import std4 from "../assets/gite.png";
 import std5 from "../assets/Nirbhay Photo.png";
 import std6 from "../assets/Mayuri.png";
+import std7 from "../assets/Prathamesh.png";
+import std8 from "../assets/Ayush.png";
+
+
+// company logos
+import Adani from "@/assets/Adani.png";
+import Thermax from "@/assets/thermax.jpeg";
+import Worley from "@/assets/worley.jpeg";
+import Finepac from "@/assets/Finepac.png";
+import Keve from "@/assets/keva.png";
+import GPE from "@/assets/GPE.png";
+import Lt from "@/assets/LT.png";
+
 
 
 type Story = {
@@ -17,6 +30,7 @@ type Story = {
   role: string;
   quote: string;
   image: string;
+  companyLogo?: string;
 };
 
 const STORIES: Story[] = [
@@ -25,14 +39,16 @@ const STORIES: Story[] = [
     company: "Adani",
     role: "Graduate Engineer Trainee",
     image: std1,
+    companyLogo: Adani,
     quote:
       "PlacementSpark mentors guided me throughout my interview preparation and helped me gain confidence to crack the interview.",
   },
   {
-    name: "Shashank Oja",
+    name: "Shashank Oza",
     company: "Thermax",
     role: "Graduate Engineer Trainee",
     image: std2,
+    companyLogo: Thermax,
     quote:
       "The mock interviews and one-to-one mentorship helped me understand the interview process and prepare effectively.",
   },
@@ -41,6 +57,7 @@ const STORIES: Story[] = [
     company: "Worley",
     role: "Graduate Engineer Trainee",
     image: std3,
+    companyLogo: Worley,
     quote:
       "PlacementSpark gave me the right direction, confidence and interview guidance that helped me secure my placement.",
   },
@@ -49,6 +66,7 @@ const STORIES: Story[] = [
     company: "Keva Frengrances",
     role: "Graduate Engineer Trainee",
     image: std4,
+    companyLogo: Keve,
     quote:
       "The structured roadmap and regular mentor feedback improved my confidence throughout the placement journey.",
   },
@@ -57,6 +75,7 @@ const STORIES: Story[] = [
     company: "Finepac Structures Pvt.Ltd",
     role: "Graduate Engineer Trainee",
     image: std5,
+    companyLogo: Finepac,
     quote:
       "PlacementSpark helped me prepare with confidence through interview practice and continuous mentor support.",
   },
@@ -65,8 +84,27 @@ const STORIES: Story[] = [
     company: "Thermax",
     role: "Graduate Engineer Trainee",
     image: std6,
+    companyLogo: Thermax,
     quote:
       "The interview preparation sessions and resume guidance played an important role in my placement journey.",
+  },
+  {
+    name: "Prathamesh Patil",
+    company: "L&T",
+    role: "Graduate Engineer Trainee",
+    image: std7,
+    companyLogo: Lt,
+    quote:
+      "With the guidance of PlacementSpark mentors, I improved my interview skills and gained the confidence to secure my job.",
+  },
+  {
+    name: "Ayush Thakre",
+    company: "SHV Energy",
+    role: "Graduate Engineer Trainee",
+    image: std8,
+    companyLogo: GPE,
+    quote:
+      "Thanks to the dedicated support of PlacementSpark mentors, I was well-prepared and confident enough to crack my interview.",
   },
 ];
 
@@ -84,9 +122,9 @@ function StoryCard({ story }: { story: Story }) {
               />
             </div>
 
-            <div className="absolute -bottom-1 -right-1 grid h-7 w-7 place-items-center rounded-full bg-[color:var(--color-brand-yellow)] text-[color:var(--color-brand-black)] ring-2 ring-white">
+            {/* <div className="absolute -bottom-1 -right-1 grid h-7 w-7 place-items-center rounded-full bg-[color:var(--color-brand-yellow)] text-[color:var(--color-brand-black)] ring-2 ring-white">
               <CheckCircle2 size={16} />
-            </div>
+            </div> */}
           </div>
 
           <h3 className="mt-4 font-semibold text-lg">{story.name}</h3>
@@ -214,13 +252,54 @@ export function SuccessStories() {
     >
       <Reveal className="max-w-2xl">
         <SectionTag>Success Stories</SectionTag>
+        <p className="mt-4 text-black/70 leading-relaxed">"Every student you see here once had the same doubts you have today."
+
+</p>
         <h2 className="mt-3 text-3xl md:text-4xl font-bold">
-          Success Stories <span aria-hidden>🚀</span>
+          Real Students. Real Placements. Real Success.<span aria-hidden></span>
         </h2>
+        
         <p className="mt-3 text-black/70 leading-relaxed">
-          Real students. Real transformations. Real job offers. Join our growing community of successful placements.
+          Every placement has a story. These students prepared with Placement Spark, built their confidence, and turned opportunities into careers. Yours could be next. Results speak louder than promises.
         </p>
       </Reveal>
+      <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+  <div className="rounded-2xl border border-black/5 bg-white p-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+    <div className="text-3xl md:text-4xl font-bold text-[color:var(--color-brand-black)]">
+      500+
+    </div>
+    <div className="mt-2 text-xs uppercase tracking-wider text-black/60">
+      Students Guided
+    </div>
+  </div>
+
+  <div className="rounded-2xl border border-black/5 bg-white p-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+    <div className="text-3xl md:text-4xl font-bold text-[color:var(--color-brand-black)]">
+      100+
+    </div>
+    <div className="mt-2 text-xs uppercase tracking-wider text-black/60">
+      Resume Reviews
+    </div>
+  </div>
+
+  <div className="rounded-2xl border border-black/5 bg-white p-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+    <div className="text-3xl md:text-4xl font-bold text-[color:var(--color-brand-black)]">
+      250+
+    </div>
+    <div className="mt-2 text-xs uppercase tracking-wider text-black/60">
+      Mock Interviews
+    </div>
+  </div>
+
+  <div className="rounded-2xl border border-black/5 bg-white p-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+    <div className="text-3xl md:text-4xl font-bold text-[color:var(--color-brand-black)]">
+      95%
+    </div>
+    <div className="mt-2 text-xs uppercase tracking-wider text-black/60">
+      Students Improved Interview Confidence
+    </div>
+  </div>
+</div>
 
       <div
         className="mt-10 relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]"

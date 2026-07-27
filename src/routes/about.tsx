@@ -26,10 +26,14 @@ const TEAM = [
 ];
 
 const MILESTONES = [
-  { year: "2023", text: "Idea born from mentoring juniors informally." },
-  { year: "2024", text: "First cohort — resumes, mocks, and offers." },
-  { year: "2025", text: "Nine core programs, students across India." },
-  { year: "2026", text: "Building the most trusted student career ecosystem." },
+  { year: "2023", text: "The Beginning — Mentoring juniors and understanding placement challenges." },
+  { year: "2024", text: "Foundation — Launched structured placement mentorship." },
+  { year: "2025", text: "Growth — Expanded into a complete placement platform." },
+  { year: "2026", text: "Ecosystem — Built a growing community of students and mentors." },
+  { year: "2027", text: "1,000+ Students — Expanding across engineering colleges." },
+  { year: "2028", text: "50+ Colleges — Building strategic academic partnerships." },
+  { year: "2029", text: "Career Community — Connecting students with mentors and recruiters." },
+  { year: "2030", text: "10,000+ Students — Empowering careers across India." },
 ];
 
 function AboutPage() {
@@ -40,10 +44,10 @@ function AboutPage() {
           <SectionTag>About us</SectionTag>
           <h1 className="mt-3 text-4xl md:text-5xl font-bold leading-tight">Built for students who deserve better prep.</h1>
           <p className="mt-5 text-black/70 leading-relaxed">
-            {BUSINESS.name} started with a simple observation: placement prep in India is either too expensive, too generic, or too disconnected from what recruiters actually want. We built the alternative — structured, honest mentorship you can afford.
+            {BUSINESS.name} was built on one simple belief: talent deserves the right guidance. We help engineering students bridge the gap between campus learning and industry expectations through structured mentorship, resume engineering, interview preparation, and honest feedback—so they become confident, career-ready professionals.
           </p>
           <p className="mt-3 text-black/70 leading-relaxed">
-            A note from the founder: "I remember the confusion of my own placement season. This is the version I wish I'd had."
+            A note from {BUSINESS.name} team : "Placement Spark was born from one observation—students don't lack talent; they often lack the right guidance. Our mission is to change that"
           </p>
         </Reveal>
         <Reveal delay={0.1}>
@@ -78,8 +82,9 @@ function AboutPage() {
 
       <section className="container-x mt-24">
         <Reveal className="max-w-2xl">
-          <SectionTag>Core values</SectionTag>
+          <SectionTag>Our Core Values</SectionTag>
           <h2 className="mt-3 text-3xl md:text-4xl font-bold">What we stand for.</h2>
+          <p className="mt-3 text-black/70 italic">"We don't just prepare students for interviews. We prepare them for opportunities."</p>
         </Reveal>
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {VALUES.map((v, i) => (
@@ -91,6 +96,9 @@ function AboutPage() {
               </div>
             </Reveal>
           ))}
+        </div>
+        <div className="mt-10 text-center">
+          <Link to="/contact" className="btn-primary">Book Free Call</Link>
         </div>
       </section>
 

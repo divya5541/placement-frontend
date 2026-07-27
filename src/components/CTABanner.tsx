@@ -8,8 +8,8 @@ export function CTABanner() {
         <div className="absolute -top-16 -right-16 h-64 w-64 rounded-full bg-[color:var(--color-brand-yellow)]/20 blur-3xl" />
         <div className="relative flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold">Ready to Get Placement-Ready?</h2>
-            <p className="mt-2 text-white/70 max-w-lg">Start with a free resume review and a mentor call. No commitment.</p>
+            <h2 className="text-3xl md:text-4xl font-bold">Ready to Begin Your Journey?</h2>
+            <p className="mt-2 text-white/70 max-w-lg">Every successful career starts with one decision—to prepare.</p>
           </div>
           <div className="flex flex-wrap gap-3">
             <Link to="/contact" className="btn-primary">Register Free</Link>

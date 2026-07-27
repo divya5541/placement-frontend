@@ -24,9 +24,9 @@ function ProgramsPage() {
     <>
       <section className="container-x pt-14 md:pt-20">
         <Reveal className="max-w-3xl">
-          <SectionTag>Programs</SectionTag>
-          <h1 className="mt-3 text-4xl md:text-5xl font-bold leading-tight">Every service, built to move you forward.</h1>
-          <p className="mt-4 text-black/70 leading-relaxed">Pick the ones that match where you are today. Combine them under a plan when you're ready to go all-in.</p>
+          <SectionTag>Your Placement Success Toolkit</SectionTag>
+          <h1 className="mt-3 text-4xl md:text-5xl font-bold leading-tight">One Platform. Every Step of Your Placement Journey.</h1>
+          <p className="mt-4 text-black/70 leading-relaxed">Master every stage of your placement journey with expert mentorship, practical guidance, and industry-focused preparation.</p>
         </Reveal>
         <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {PROGRAMS.map((p, i) => (

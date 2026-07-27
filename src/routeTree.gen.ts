@@ -15,9 +15,12 @@ import { Route as BlogRouteImport } from './routes/blog'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as ProgramsRouteImport } from './routes/programs'
+import { Route as RefundPolicyRouteImport } from './routes/refund-policy'
 import { Route as ResourcesRouteImport } from './routes/resources'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as TermsAndConditionsRouteImport } from './routes/terms-and-conditions'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -49,9 +52,19 @@ const PricingRoute = PricingRouteImport.update({
   path: '/pricing',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProgramsRoute = ProgramsRouteImport.update({
   id: '/programs',
   path: '/programs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RefundPolicyRoute = RefundPolicyRouteImport.update({
+  id: '/refund-policy',
+  path: '/refund-policy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ResourcesRoute = ResourcesRouteImport.update({
@@ -64,6 +77,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TermsAndConditionsRoute = TermsAndConditionsRouteImport.update({
+  id: '/terms-and-conditions',
+  path: '/terms-and-conditions',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -72,9 +90,12 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
   '/pricing': typeof PricingRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/programs': typeof ProgramsRoute
+  '/refund-policy': typeof RefundPolicyRoute
   '/resources': typeof ResourcesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms-and-conditions': typeof TermsAndConditionsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -83,9 +104,12 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
   '/pricing': typeof PricingRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/programs': typeof ProgramsRoute
+  '/refund-policy': typeof RefundPolicyRoute
   '/resources': typeof ResourcesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms-and-conditions': typeof TermsAndConditionsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -95,9 +119,12 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
   '/pricing': typeof PricingRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/programs': typeof ProgramsRoute
+  '/refund-policy': typeof RefundPolicyRoute
   '/resources': typeof ResourcesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms-and-conditions': typeof TermsAndConditionsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -108,9 +135,12 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faq'
     | '/pricing'
+    | '/privacy-policy'
     | '/programs'
+    | '/refund-policy'
     | '/resources'
     | '/sitemap.xml'
+    | '/terms-and-conditions'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -119,9 +149,12 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faq'
     | '/pricing'
+    | '/privacy-policy'
     | '/programs'
+    | '/refund-policy'
     | '/resources'
     | '/sitemap.xml'
+    | '/terms-and-conditions'
   id:
     | '__root__'
     | '/'
@@ -130,9 +163,12 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faq'
     | '/pricing'
+    | '/privacy-policy'
     | '/programs'
+    | '/refund-policy'
     | '/resources'
     | '/sitemap.xml'
+    | '/terms-and-conditions'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -142,9 +178,12 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   FaqRoute: typeof FaqRoute
   PricingRoute: typeof PricingRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   ProgramsRoute: typeof ProgramsRoute
+  RefundPolicyRoute: typeof RefundPolicyRoute
   ResourcesRoute: typeof ResourcesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  TermsAndConditionsRoute: typeof TermsAndConditionsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -191,11 +230,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PricingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/programs': {
       id: '/programs'
       path: '/programs'
       fullPath: '/programs'
       preLoaderRoute: typeof ProgramsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/refund-policy': {
+      id: '/refund-policy'
+      path: '/refund-policy'
+      fullPath: '/refund-policy'
+      preLoaderRoute: typeof RefundPolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/resources': {
@@ -212,6 +265,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/terms-and-conditions': {
+      id: '/terms-and-conditions'
+      path: '/terms-and-conditions'
+      fullPath: '/terms-and-conditions'
+      preLoaderRoute: typeof TermsAndConditionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -222,9 +282,12 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   FaqRoute: FaqRoute,
   PricingRoute: PricingRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
   ProgramsRoute: ProgramsRoute,
+  RefundPolicyRoute: RefundPolicyRoute,
   ResourcesRoute: ResourcesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  TermsAndConditionsRoute: TermsAndConditionsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

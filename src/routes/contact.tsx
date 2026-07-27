@@ -76,7 +76,7 @@ function ContactPage() {
             <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="mt-8 rounded-2xl bg-[color:var(--color-brand-yellow-light)] border border-[color:var(--color-brand-yellow)] p-8 text-center">
               <CheckCircle2 size={48} className="mx-auto text-[color:var(--color-brand-black)]" />
               <h2 className="mt-4 text-2xl font-bold">You're in!</h2>
-              <p className="mt-2 text-black/70">A mentor will reach out within 24 hours. Meanwhile, feel free to WhatsApp us.</p>
+              <p className="mt-2 text-black/70 leading-relaxed">A mentor will reach out within 24 hours. Meanwhile, feel free to WhatsApp us.</p>
               <a href={BUSINESS.whatsapp} target="_blank" rel="noreferrer" className="btn-whatsapp mt-5">Chat on WhatsApp</a>
             </motion.div>
           ) : (
@@ -169,7 +169,7 @@ function ContactPage() {
             </ul>
             <div className="mt-6 flex gap-2">
               <a href={BUSINESS.linkedin} target="_blank" rel="noreferrer" className="grid h-10 w-10 place-items-center rounded-md border border-white/15 hover:bg-[color:var(--color-brand-yellow)] hover:text-black transition"><Linkedin size={18} /></a>
-              <a href={BUSINESS.instagram} target="_blank" rel="noreferrer" className="grid h-10 w-10 place-items-center rounded-md border border-white/15 hover:bg-[color:var(--color-brand-yellow)] hover:text-black transition"><Instagram size={18} /></a>
+              {/* <a href={BUSINESS.instagram} target="_blank" rel="noreferrer" className="grid h-10 w-10 place-items-center rounded-md border border-white/15 hover:bg-[color:var(--color-brand-yellow)] hover:text-black transition"><Instagram size={18} /></a> */}
             </div>
             <a href={BUSINESS.whatsapp} target="_blank" rel="noreferrer" className="btn-whatsapp mt-6 w-full">Chat on WhatsApp</a>
             <p className="mt-4 text-xs text-white/50">{BUSINESS.hours}</p>

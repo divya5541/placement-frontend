@@ -53,7 +53,7 @@ function FaqPage() {
         <Reveal className="max-w-3xl">
           <SectionTag>FAQ</SectionTag>
           <h1 className="mt-3 text-4xl md:text-5xl font-bold leading-tight">Questions, answered.</h1>
-          <p className="mt-4 text-black/70 leading-relaxed">Search below or browse by category.</p>
+          <p className="mt-4 text-black/70 leading-relaxed">Still unsure? Explore our FAQs or connect with a mentor—we're here to help.</p>
         </Reveal>
         <div className="mt-8 max-w-xl relative">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-black/40" size={18} />

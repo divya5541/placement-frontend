@@ -4,6 +4,23 @@
 
 @custom-variant dark (&:is(.dark *));
 
+
+@keyframes logo-scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-50% - 12px));
+  }
+}
+
+.animate-logo-scroll {
+  display: flex;
+  width: max-content;
+  animation: logo-scroll 20s linear infinite;
+}
+
 /* Placement Spark design system — yellow / black / whitespace. */
 
 @theme inline {

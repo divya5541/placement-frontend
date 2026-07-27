@@ -5,6 +5,7 @@ import { Reveal } from "@/components/Reveal";
 import { SectionTag } from "@/components/SectionTag";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { CTABanner } from "@/components/CTABanner";
+import { WhichPlanSection } from "@/components/WhichPlanSection";
 
 export const Route = createFileRoute("/pricing")({
   head: () => ({
@@ -33,9 +34,10 @@ function PricingPage() {
       <section className="container-x pt-14 md:pt-20">
         <Reveal className="max-w-3xl">
           <SectionTag>Pricing</SectionTag>
+          <p className="mt-4 text-black/70 leading-relaxed">Choose the Preparation That Fits You Best...</p>
           <h1 className="mt-3 text-4xl md:text-5xl font-bold leading-tight">Simple plans. Real outcomes.</h1>
-          <p className="mt-4 text-black/70 leading-relaxed">Try us free. Upgrade when you're ready. Prep with a friend or a squad and save more.</p>
-          <p className="mt-2 text-xs text-black/40 uppercase tracking-wider">* Amounts marked ₹— are placeholders while we finalize plans.</p>
+          <p className="mt-4 text-black/70 leading-relaxed">Whether you prefer learning individually, with a friend, or as a group, we've designed a plan that matches your journey.</p>
+          <p className="mt-2 text-xs text-black/40 uppercase tracking-wider">* Confidence isn't built in the interview room. It's built during preparation.</p>
         </Reveal>
 
         <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
@@ -58,6 +60,8 @@ function PricingPage() {
             </Reveal>
           ))}
         </div>
+        <WhichPlanSection />
+
 
         <Reveal>
           <h2 className="mt-20 text-2xl md:text-3xl font-bold">Full comparison</h2>

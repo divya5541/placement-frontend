@@ -12,6 +12,14 @@ import { Counter } from "@/components/Counter";
 import { CourseCountdown } from "@/components/CountDownC";
 import heroImage from "@/assets/hero.png";
 import shirtImage from "@/assets/shirt.png";
+import { CompanyLogoSlider } from "@/components/CompanyLogoSlider";
+
+import {
+  FileText,
+  BadgeCheck,
+  Linkedin,
+  Mic,
+} from "lucide-react";
 
 
 export const Route = createFileRoute("/")({
@@ -29,7 +37,7 @@ function Index() {
         <div className="container-x pt-16 pb-20 md:pt-24 md:pb-28 grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-              <SectionTag>Mumbai · Online across India</SectionTag>
+              <SectionTag>📍 Based in Mumbai | Serving Students Across India</SectionTag>
             </motion.div>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -62,7 +70,8 @@ function Index() {
             <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-black/60">
               <span className="flex items-center gap-1.5"><CheckCircle2 size={16} className="text-[color:var(--color-brand-yellow)]" /> 1:1 mentors</span>
               <span className="flex items-center gap-1.5"><CheckCircle2 size={16} className="text-[color:var(--color-brand-yellow)]" /> Real interview prep</span>
-              <span className="flex items-center gap-1.5"><CheckCircle2 size={16} className="text-[color:var(--color-brand-yellow)]" /> WhatsApp support</span>
+              <span className="flex items-center gap-1.5"><CheckCircle2 size={16} className="text-[color:var(--color-brand-yellow)]" /> ATS Resume Review</span>
+              <span className="flex items-center gap-1.5"><CheckCircle2 size={16} className="text-[color:var(--color-brand-yellow)]" /> ATS Resume Review</span>
             </div>
           </div>
           <motion.div
@@ -110,7 +119,7 @@ function Index() {
       <section className="container-x mt-16 md:mt-24 grid gap-10 md:grid-cols-2 md:items-center">
         <Reveal>
           <SectionTag>About</SectionTag>
-          <h2 className="mt-3 text-3xl md:text-4xl font-bold">Placement prep, done honestly.</h2>
+          <h2 className="mt-3 text-3xl md:text-4xl font-bold">Your degree gets you shortlisted. Your preparation gets you selected</h2>
           <p className="mt-4 text-black/70 leading-relaxed">
             {BUSINESS.name} was built from a simple observation: brilliant students often don't get the placements they deserve because the prep system around them is broken. We fix that with mentorship, structure, and honest feedback — not hype.
           </p>
@@ -138,6 +147,9 @@ function Index() {
         <Reveal className="max-w-2xl">
           <SectionTag>Why Placement Spark</SectionTag>
           <h2 className="mt-3 text-3xl md:text-4xl font-bold">Everything you need to land the offer.</h2>
+          <p className="mt-4 text-black/70 leading-relaxed">
+           Talent deserves opportunity. We help students bridge the gap between campus learning and industry expectations.
+          </p>
         </Reveal>
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {WHY_CHOOSE.map((w, i) => (
@@ -149,6 +161,7 @@ function Index() {
                 <h3 className="mt-4 font-semibold text-lg">{w.title}</h3>
                 <p className="mt-1.5 text-sm text-black/60 leading-relaxed">{w.desc}</p>
               </div>
+              
             </Reveal>
           ))}
         </div>
@@ -178,7 +191,8 @@ function Index() {
         <div className="flex flex-wrap items-end justify-between gap-4">
           <Reveal className="max-w-2xl">
             <SectionTag>Programs</SectionTag>
-            <h2 className="mt-3 text-3xl md:text-4xl font-bold">Nine focused services. Pick what you need.</h2>
+            <h2 className="mt-3 text-3xl md:text-4xl font-bold">One Platform. Every Step of Your Placement Journey.</h2>
+            <p className="mt-4 text-black/70 leading-relaxed">Master every stage of your placement journey with expert mentorship, practical guidance, and industry-focused preparation.</p>
           </Reveal>
           <Link to="/programs" className="btn-ghost">View all programs <ArrowRight size={18} /></Link>
         </div>
@@ -207,7 +221,8 @@ function Index() {
         <div className="flex flex-wrap items-end justify-between gap-4">
           <Reveal className="max-w-2xl">
             <SectionTag>Pricing</SectionTag>
-            <h2 className="mt-3 text-3xl md:text-4xl font-bold">Simple plans. Real outcomes.</h2>
+            <h2 className="mt-3 text-3xl md:text-4xl font-bold">Choose Your Path to Placement Success.</h2>
+            <p className="mt-4 text-black/70 leading-relaxed">Whether you learn solo, with a buddy, or as a squad — there's a plan for your journey.</p>
           </Reveal>
           <Link to="/pricing" className="btn-ghost">View all plans <ArrowRight size={18} /></Link>
         </div>
@@ -221,9 +236,18 @@ function Index() {
                 <p className="mt-2 text-sm opacity-70">{p.tagline}</p>
                 <Link to="/pricing" className={"mt-5 block text-center rounded-md px-4 py-2 text-sm font-semibold " + (p.highlight ? "bg-[color:var(--color-brand-yellow)] text-black" : "bg-black text-white")}>{p.cta}</Link>
               </div>
+              
             </Reveal>
+            
           ))}
         </div>
+        <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-black/60">
+              <span className="flex items-center gap-1.5"><CheckCircle2 size={16} className="text-[color:var(--color-brand-yellow)]" /> ✔ No Hidden Fees</span>
+              <span className="flex items-center gap-1.5"><CheckCircle2 size={16} className="text-[color:var(--color-brand-yellow)]" /> ✔ Flexible Learning</span>
+              <span className="flex items-center gap-1.5"><CheckCircle2 size={16} className="text-[color:var(--color-brand-yellow)]" /> ✔ Lifetime Resource Access</span>
+              <span className="flex items-center gap-1.5"><CheckCircle2 size={16} className="text-[color:var(--color-brand-yellow)]" /> ✔ Quality mentorship</span>
+            </div>
+
       </section>
 
       {/* MERCH / BRAND SHOWCASE */}
@@ -259,7 +283,7 @@ function Index() {
                 <li className="flex items-center gap-2"><CheckCircle2 size={18} className="text-[color:var(--color-brand-yellow)]" /> Quality Study Material📚 </li>
                 <li className="flex items-center gap-2"><CheckCircle2 size={18} className="text-[color:var(--color-brand-yellow)]" />Industry Insights</li>
               </ul>
-              <Link to="/contact" className="btn-primary">Claim yours <ArrowRight size={18} /></Link>
+              <Link to="/contact" className="btn-primary">Become Placement Ready<ArrowRight size={18} /></Link>
             </div>
           </Reveal>
         </div>
@@ -267,6 +291,8 @@ function Index() {
 
       {/* SUCCESS STORIES */}
       <SuccessStories />
+
+      <CompanyLogoSlider />
 
       {/* FAQ SNIPPET */}
       <section className="container-x mt-24">

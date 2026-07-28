@@ -34,98 +34,82 @@ function TermsPage() {
           heading: "1. Acceptance of Terms",
           body: (
             <p>
-              By creating an account, purchasing a program, or otherwise using our Services, you
-              confirm that you have read, understood, and accepted these Terms. If you do not agree,
-              please do not use the Services.
+              By accessing or using our services, you agree to be bound by these Terms and Conditions. If you do not
+agree with any part of these terms, you may not access or use our services.
             </p>
           ),
         },
         {
-          heading: "2. Eligibility",
+          heading: "2. Program Duration",
           body: (
             <p>
-              Our Services are intended for students and early-career professionals aged 16 and
-              above. If you are under 18, you confirm that a parent or legal guardian has reviewed
-              and consented to these Terms on your behalf.
+              The program is tentatively scheduled to run for five (5) weeks. Placement Spark reserves the right to
+modify the schedule or duration based on operational requirements or participant needs. Any changes will
+be communicated in advance.
             </p>
           ),
         },
         {
-          heading: "3. User Responsibilities",
-          body: (
-            <ul className="list-disc pl-6 space-y-1">
-              <li>Provide accurate, current, and complete information during registration.</li>
-              <li>Attend scheduled mentorship sessions and mock interviews on time.</li>
-              <li>Use course materials only for personal learning; do not redistribute or resell.</li>
-              <li>Communicate respectfully with mentors, staff, and fellow students.</li>
-              <li>Keep your login credentials confidential and notify us of any unauthorised use.</li>
-            </ul>
-          ),
-        },
-        {
-          heading: "4. Payments",
+          heading: "3. . Interview Schedule Compliance",
           body: (
             <p>
-              Program fees are displayed on the Pricing page and are payable in advance unless
-              otherwise agreed. All payments are processed by third-party payment gateways. Prices
-              may be revised from time to time; changes will not affect programs you have already
-              purchased.
+              Participants are expected to adhere to the interview schedule and timelines as communicated by the
+Placement Spark team. Failure to attend scheduled sessions may result in limited access to program
+benefits or removal from specific activities.
             </p>
           ),
         },
         {
-          heading: "5. Intellectual Property",
+          heading: "4.  Placement Disclaimer",
           body: (
             <p>
-              All content on this website and within our programs — including course modules,
-              recordings, templates, worksheets, and branding — is the intellectual property of
-              Placement Spark and is protected by applicable copyright and trademark laws. You may
-              not copy, reproduce, or share our material without prior written consent.
+              Placement Spark provides training, guidance, and mentorship to support candidates in their placement
+journey. However, no job placement or employment guarantee is offered or implied. Outcomes depend on
+individual effort, performance, and external factors beyond our control.
             </p>
           ),
         },
         {
-          heading: "6. Limitation of Liability",
+          heading: "5. Fee and Refund Policy",
           body: (
             <p>
-              Placement Spark provides mentorship, guidance, and preparation resources; we do not
-              guarantee a specific job offer, package, or placement outcome. To the maximum extent
-              permitted by law, our total liability arising out of or related to the Services shall
-              not exceed the amount you paid for the specific program in question.
+             Upon successful registration, the program fee is strictly non-refundable, regardless of circumstances
+including withdrawal, non-participation, or dissatisfaction. Participants are advised to review all program
+details prior to enrollment.
             </p>
           ),
         },
         {
-          heading: "7. Termination",
+          heading: "6. . Code of Conduct and Disciplinary Action",
           body: (
             <p>
-              We may suspend or terminate access to the Services if you violate these Terms, engage
-              in disruptive behaviour, or misuse our content. You may discontinue using the Services
-              at any time, subject to our Refund Policy.
+              Placement Spark maintains a professional and inclusive learning environment. The organization reserves
+the right to terminate participation for any candidate found engaging in misconduct, disruptive behavior, or
+repeated non-compliance with program guidelines. Such decisions are final and non-negotiable.
             </p>
           ),
         },
         {
-          heading: "8. Governing Law",
+          heading: "7.  Intellectual Property",
           body: (
             <p>
-              These Terms are governed by the laws of India. Any disputes shall be subject to the
-              exclusive jurisdiction of the courts located in Mumbai, Maharashtra.
+              All content and materials available on our services, including but not limited to text, graphics, logos,
+images, and software, are the property of Placement spark or its licensors and are protected by copyright,
+trademark, and other intellectual property laws.
             </p>
           ),
         },
         {
-          heading: "9. Contact",
+          heading: "8. Changes to Terms and Conditions",
           body: (
             <p>
-              For questions about these Terms, contact us at{" "}
-              <a href={`mailto:${BUSINESS.email}`} className="underline hover:text-[color:var(--color-brand-yellow)]">
-                {BUSINESS.email}
-              </a>
-              .
+              We reserve the right to update or modify these Terms and Conditions at any time without prior notice.
+Your continued use of our services after any such changes constitutes your acceptance of the new Terms
+and Conditions.
             </p>
           ),
         },
+        
       ]}
     />
   );

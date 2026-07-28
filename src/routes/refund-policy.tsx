@@ -23,24 +23,19 @@ function RefundPolicyPage() {
       updated="July 26, 2026"
       intro={
         <p>
-          We want every student to feel confident about joining Placement Spark. This Refund Policy
-          explains when you are eligible for a refund, what services are non-refundable, and how to
-          raise a request.
+          At Placement Spark, we are committed to providing quality mentorship and career guidance.
+Please read our refund policy carefully before enrolling.
         </p>
       }
       sections={[
         {
-          heading: "1. Eligibility for Refunds",
+          heading: "1. Program Registration",
           body: (
-            <ul className="list-disc pl-6 space-y-1">
-              <li>Refund requests must be raised within 7 days of purchase.</li>
-              <li>You must not have consumed more than 20% of the program (sessions attended, modules unlocked, or reviews delivered).</li>
-              <li>Refunds are calculated on the paid program value, excluding taxes and payment gateway charges.</li>
-            </ul>
+            <p>Your seat is confirmed only after successful payment.</p>
           ),
         },
         {
-          heading: "2. Non-Refundable Services",
+          heading: "2. Refund Eligibility",
           body: (
             <ul className="list-disc pl-6 space-y-1">
               <li>One-off mock interviews, resume reviews, or LinkedIn audits already delivered.</li>
@@ -51,38 +46,31 @@ function RefundPolicyPage() {
           ),
         },
         {
-          heading: "3. Refund Request Process",
+          heading: "3. Non-Refundable Situations",
           body: (
             <ol className="list-decimal pl-6 space-y-1">
-              <li>
-                Email{" "}
-                <a href={`mailto:${BUSINESS.email}`} className="underline hover:text-[color:var(--color-brand-yellow)]">
-                  {BUSINESS.email}
-                </a>{" "}
-                with the subject "Refund Request — [Your Name]".
-              </li>
-              <li>Include your registered email, program name, order ID, and reason for the request.</li>
-              <li>Our team will acknowledge your request within 2 business days.</li>
+              <p>Fees are generally non-refundable after enrollment if:</p>
+
+              <li>The student chooses not to attend sessions.</li>
+              <li>The student withdraws voluntarily.</li>
+              <li>The student is unable to attend due to personal reasons.</li>
+              <li>The student has already received learning materials or attended sessions.</li>
             </ol>
           ),
         },
         {
-          heading: "4. Processing Time",
+          heading: "4. Exceptional Cases",
           body: (
             <p>
-              Approved refunds are processed within 7–10 business days to the original payment
-              method. Depending on your bank or card issuer, the amount may take an additional 3–5
-              business days to reflect in your account.
+              Placement Spark may review genuine exceptional cases at its sole discretion.
             </p>
           ),
         },
         {
-          heading: "5. Exceptions",
+          heading: "5. Refund Processing",
           body: (
             <p>
-              In case of duplicate payments, technical errors, or program cancellation by Placement
-              Spark, a full refund will be issued regardless of the timelines above. Custom
-              corporate or institutional engagements are governed by their individual agreements.
+              If approved, refunds will normally be processed to the original payment method within 7–10 business days.
             </p>
           ),
         },

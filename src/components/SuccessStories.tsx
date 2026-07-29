@@ -9,8 +9,8 @@ import std3 from "../assets/mansi.png";
 import std4 from "../assets/gite.png";
 import std5 from "../assets/Nirbhay Photo.png";
 import std6 from "../assets/Mayuri.png";
-import std7 from "../assets/Prathamesh.png";
-import std8 from "../assets/Ayush.png";
+import std7 from "../assets/prathamesh.png";
+import std8 from "../assets/ayush.png";
 
 
 // company logos

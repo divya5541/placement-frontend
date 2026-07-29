@@ -5,8 +5,8 @@ import { Download, FileText, ListChecks, Map, X, CheckCircle2 } from "lucide-rea
 import { Reveal } from "@/components/Reveal";
 import { SectionTag } from "@/components/SectionTag";
 import { CTABanner } from "@/components/CTABanner";
-import { captureResourceEmail } from "@/lib/forms.functions";
-import { useServerFn } from "@tanstack/react-start";
+// import { captureResourceEmail } from "@/lib/forms.functions";
+//import { useServerFn } from "@tanstack/react-start";
 import { resourceEmailSchema } from "@/lib/validation";
 
 export const Route = createFileRoute("/resources")({
@@ -42,20 +42,52 @@ function ResourcesPage() {
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const capture = useServerFn(captureResourceEmail);
+  //const capture = useServerFn(captureResourceEmail);
 
   const submit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError(null);
-    const parsed = resourceEmailSchema.safeParse({ email, resource: open ?? "" });
-    if (!parsed.success) { setError(parsed.error.issues[0].message); return; }
-    setSubmitting(true);
-    try {
-      await capture({ data: parsed.data });
-      setDone(true);
-    } catch { setError("Something went wrong. Please try again."); }
-    finally { setSubmitting(false); }
-  };
+  e.preventDefault();
+
+  setError(null);
+
+  const parsed = resourceEmailSchema.safeParse({
+    email,
+    resource: open ?? "",
+  });
+
+  if (!parsed.success) {
+    setError(parsed.error.issues[0].message);
+    return;
+  }
+
+  setSubmitting(true);
+
+  try {
+    const response = await fetch("http://localhost:5000/send-resource", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: parsed.data.email,
+        resource: parsed.data.resource,
+      }),
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      throw new Error(result.message || "Failed to send resource");
+    }
+
+    setDone(true);
+
+  } catch (error) {
+    console.error(error);
+    setError("Something went wrong. Please try again.");
+  } finally {
+    setSubmitting(false);
+  }
+};
 
   const close = () => { setOpen(null); setEmail(""); setDone(false); setError(null); };
 

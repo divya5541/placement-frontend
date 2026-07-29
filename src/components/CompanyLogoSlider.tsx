@@ -1,6 +1,6 @@
 import { Reveal } from "./Reveal";
 import Worley from "@/assets/worley.jpeg";
-import Finepac from "@/assets/finepac.png";
+import Finepac from "@/assets/Finepac.png";
 import Keve from "@/assets/Keva.png";
 import GPE from "@/assets/GPE.png";
 import Lakshami from "@/assets/Laxmi_Organic.jpg";

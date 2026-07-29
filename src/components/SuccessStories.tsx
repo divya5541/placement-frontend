@@ -18,7 +18,7 @@ import Adani from "@/assets/Adani.png";
 import Thermax from "@/assets/thermax.jpeg";
 import Worley from "@/assets/worley.jpeg";
 import Finepac from "@/assets/Finepac.png";
-import Keve from "@/assets/keva.png";
+import Keve from "@/assets/Keva.png";
 import GPE from "@/assets/GPE.png";
 import Lt from "@/assets/LT.png";
 

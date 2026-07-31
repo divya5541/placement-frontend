@@ -50,7 +50,7 @@ be communicated in advance.
           ),
         },
         {
-          heading: "3. . Interview Schedule Compliance",
+          heading: "3. Interview Schedule Compliance",
           body: (
             <p>
               Participants are expected to adhere to the interview schedule and timelines as communicated by the
@@ -80,7 +80,7 @@ details prior to enrollment.
           ),
         },
         {
-          heading: "6. . Code of Conduct and Disciplinary Action",
+          heading: "6. Code of Conduct and Disciplinary Action",
           body: (
             <p>
               Placement Spark maintains a professional and inclusive learning environment. The organization reserves

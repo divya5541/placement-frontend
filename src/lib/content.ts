@@ -43,23 +43,23 @@ export const PROGRAMS: Program[] = [
   { icon: Rocket, title: "Placement Strategy🚀", benefit: "Maximize offer chances", description: "A personalized plan across companies, roles, timelines, and referrals — so nothing is left to luck." },
 ];
 
-export type Why = { icon: LucideIcon; title: string; desc: string };
+export type Why = { icon: LucideIcon; title: string; desc: string badge: string;};
 export const WHY_CHOOSE: Why[] = [
-  { icon: GraduationCap, title: "Expert Mentors", desc: "Learn from professionals who've been on both sides of the hiring table." },
-  { icon: BookOpen, title: "Structured Programs", desc: "Step-by-step curriculum — no random tips, only what actually works." },
-  { icon: Award, title: "Real Results", desc: "Focused on outcomes: interview calls, offers, and confidence." },
-  { icon: FileText, title: "ATS Resumes", desc: "Every resume tested against real recruiter systems before it ships." },
-  { icon: MessageSquare, title: "Mock Interviews", desc: "Live 1:1 practice with detailed, honest feedback." },
-  { icon: Headphones, title: "WhatsApp Support", desc: "Reach your mentor between sessions — quick doubts, quick replies." },
+  { icon: GraduationCap, badge: "⭐ Most Popular", title: "Expert Mentors", desc: "Learn from professionals who've been on both sides of the hiring table." },
+  { icon: BookOpen, badge: "📚", title: "Structured Programs", desc: "Step-by-step curriculum — no random tips, only what actually works." },
+  { icon: Award, badge: "🏆", title: "Real Results", desc: "Focused on outcomes: interview calls, offers, and confidence." },
+  { icon: FileText, badge: "📄", title: "ATS Resumes", desc: "Every resume tested against real recruiter systems before it ships." },
+  { icon: MessageSquare, badge: "🎤", title: "Mock Interviews", desc: "Live 1:1 practice with detailed, honest feedback." },
+  { icon: Headphones, badge: "📞", title: "WhatsApp Support", desc: "Reach your mentor between sessio ns — quick doubts, quick replies." },
 ];
 
 export const VALUES: Why[] = [
-  { icon: Sparkles, title: "Innovation", desc: "We embrace new technologies, AI tools, and modern hiring practices to keep students ahead." },
-  { icon: ShieldCheck, title: "Integrity", desc: "We believe in honest guidance, constructive feedback, and ethical mentorship." },
-  { icon: Users, title: "Student-First", desc: "Every decision begins with one question: Will this genuinely help our students grow?" },
-  { icon: Target, title: "Growth Mindset", desc: "We encourage continuous learning, resilience, and improvement throughout every student's journey" },
-  { icon: Briefcase, title: "Accessibility", desc: "Quality mentorship should be available to every aspiring engineer, regardless of location or background." },
-  { icon: Award, title: "Excellence", desc: "We continuously improve our programs to deliver meaningful learning experiences." },
+  { icon: Sparkles, badge: "✨", title: "Innovation", desc: "We embrace new technologies, AI tools, and modern hiring practices to keep students ahead." },
+  { icon: ShieldCheck, badge: "🛡️", title: "Integrity", desc: "We believe in honest guidance, constructive feedback, and ethical mentorship." },
+  { icon: Users, badge: "👥", title: "Student-First", desc: "Every decision begins with one question: Will this genuinely help our students grow?" },
+  { icon: Target, badge: "🎯", title: "Growth Mindset", desc: "We encourage continuous learning, resilience, and improvement throughout every student's journey" },
+  { icon: Briefcase, badge: "💼", title: "Accessibility", desc: "Quality mentorship should be available to every aspiring engineer, regardless of location or background." },
+  { icon: Award, badge: "🏆", title: "Excellence", desc: "We continuously improve our programs to deliver meaningful learning experiences." },
 ];
 
 export const JOURNEY = [

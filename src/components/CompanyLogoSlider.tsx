@@ -1,13 +1,14 @@
 import { Reveal } from "./Reveal";
-import Worley from "@/assets/worley.jpeg";
+import Worley from "@/assets/worley.png";
 import Finepac from "@/assets/Finepac.png";
 import Keve from "@/assets/Keva.png";
-import GPE from "@/assets/GPE.png";
+import GPE from "@/assets/GPE.jpeg";
 import Lakshami from "@/assets/Laxmi_Organic.jpg";
 import Lt from "@/assets/LT.png";
 import Lubrizol from "@/assets/lubrizol.jpeg";
+import Upi from "@/assets/upl.jpeg";
 //import Lupin from "@/assets/Lupin.png";
-import Relience from "@/assets/reliance.jpeg";
+//import Relience from "@/assets/reliance.jpeg";
 // import Lupin from "@/assets/Lupin.png";
 
 
@@ -20,8 +21,7 @@ const companies = [
  // { name: "Company 6", logo: Lupin },
   { name: "Company 7", logo: Lt },
   { name: "Company 8", logo: Lubrizol },
-  { name: "Company 8", logo: Relience },
-  { name: "Company 8", logo: Lubrizol },
+  { name: "Company 9", logo: Upi },
 ];
 
 export function CompanyLogoSlider() {

@@ -35,7 +35,7 @@ function PricingPage() {
         <Reveal className="max-w-3xl">
           <SectionTag>Pricing</SectionTag>
           <p className="mt-4 text-black/70 leading-relaxed">Choose the Preparation That Fits You Best...</p>
-          <h1 className="mt-3 text-4xl md:text-5xl font-bold leading-tight">Simple plans. Real outcomes.</h1>
+          <h1 className="mt-3 text-4xl md:text-5xl font-bold leading-tight">Choose Your Path to Placement Success.</h1>
           <p className="mt-4 text-black/70 leading-relaxed">Whether you prefer learning individually, with a friend, or as a group, we've designed a plan that matches your journey.</p>
           <p className="mt-2 text-xs text-black/40 uppercase tracking-wider">* Confidence isn't built in the interview room. It's built during preparation.</p>
         </Reveal>

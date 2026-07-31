@@ -18,7 +18,7 @@ export function Footer() {
             Placement Spark
           </div>
           <p className="mt-3 text-sm font-semibold text-[color:var(--color-brand-yellow)]">
-            Discover Reality. Explore Infinity.
+            Discover Reality, Explore Infinity.
           </p>
           <p className="mt-3 text-sm text-white/70 max-w-xs">
             Preparing Careers, Not Just Placements. Talent deserves opportunity — we help students bridge the gap between campus learning and industry expectations.

@@ -56,7 +56,7 @@ function Index() {
               transition={{ duration: 0.6, delay: 0.15 }}
               className="mt-5 text-lg text-black/70 max-w-lg"
             >
-              Structured mentorship, resume building, interview prep & career guidance — built for chemical engineer and fresh graduates in India.
+              Crack placements with structured mentorship, ATS-optimized resume building, mock interviews, and industry guidance—designed to help engineering students become interview-ready with confidence.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -71,7 +71,8 @@ function Index() {
               <span className="flex items-center gap-1.5"><CheckCircle2 size={16} className="text-[color:var(--color-brand-yellow)]" /> 1:1 mentors</span>
               <span className="flex items-center gap-1.5"><CheckCircle2 size={16} className="text-[color:var(--color-brand-yellow)]" /> Real interview prep</span>
               <span className="flex items-center gap-1.5"><CheckCircle2 size={16} className="text-[color:var(--color-brand-yellow)]" /> ATS Resume Review</span>
-              <span className="flex items-center gap-1.5"><CheckCircle2 size={16} className="text-[color:var(--color-brand-yellow)]" /> ATS Resume Review</span>
+              <span className="flex items-center gap-1.5"><CheckCircle2 size={16} className="text-[color:var(--color-brand-yellow)]" /> WhatsApp Support</span>
+              <span className="flex items-center gap-1.5"><CheckCircle2 size={16} className="text-[color:var(--color-brand-yellow)]" /> Mock Interviews</span>
             </div>
           </div>
           <motion.div

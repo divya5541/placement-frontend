@@ -16,10 +16,10 @@ import std8 from "../assets/ayush.png";
 // company logos
 import Adani from "@/assets/Adani.png";
 import Thermax from "@/assets/thermax.jpeg";
-import Worley from "@/assets/worley.jpeg";
+import Worley from "@/assets/worley.png";
 import Finepac from "@/assets/Finepac.png";
 import Keve from "@/assets/Keva.png";
-import GPE from "@/assets/GPE.png";
+import GPE from "@/assets/GPE.jpeg";
 import Lt from "@/assets/LT.png";
 
 
@@ -43,6 +43,7 @@ const STORIES: Story[] = [
     quote:
       "PlacementSpark mentors guided me throughout my interview preparation and helped me gain confidence to crack the interview.",
   },
+  
   {
     name: "Shashank Oza",
     company: "Thermax",
@@ -63,7 +64,7 @@ const STORIES: Story[] = [
   },
   {
     name: "Prathmesh Gite",
-    company: "Keva Frengrances",
+    company: "Keva Fragrances",
     role: "Graduate Engineer Trainee",
     image: std4,
     companyLogo: Keve,
@@ -72,7 +73,7 @@ const STORIES: Story[] = [
   },
   {
     name: "Nirbhay Kore",
-    company: "Finepac Structures Pvt.Ltd",
+    company: "Finepac Structures",
     role: "Graduate Engineer Trainee",
     image: std5,
     companyLogo: Finepac,
@@ -141,9 +142,18 @@ function StoryCard({ story }: { story: Story }) {
           </p>
 
           <div className="mt-5 inline-flex items-center gap-1.5 rounded-full bg-[color:var(--color-brand-yellow-light)] px-3 py-1.5 text-xs font-semibold text-[color:var(--color-brand-black)]">
-            <span>✅</span> Placed at{" "}
-            <span className="text-[color:var(--color-brand-yellow)] font-bold [-webkit-text-stroke:0.4px_var(--color-brand-black)]">
+            <span>✅</span>
+            <span>Placed at</span>
+            <span className="inline-flex items-center gap-1.5 text-[color:var(--color-brand-yellow)] font-bold [-webkit-text-stroke:0.4px_var(--color-brand-black)]">
+              
               {story.company}
+              {story.companyLogo && (
+                <img
+                  src={story.companyLogo}
+                  alt={`${story.company} logo`}
+                  className="h-5 w-5 rounded-full bg-white object-contain p-0.5"
+                />
+              )}
             </span>
           </div>
         </div>
@@ -251,7 +261,7 @@ export function SuccessStories() {
       className="container-x mt-24"
     >
       <Reveal className="max-w-2xl">
-        <SectionTag>Success Stories</SectionTag>
+        <SectionTag>From Aspiration to Offer Letter. </SectionTag>
         <p className="mt-4 text-black/70 leading-relaxed">"Every student you see here once had the same doubts you have today."
 
 </p>
@@ -260,7 +270,7 @@ export function SuccessStories() {
         </h2>
         
         <p className="mt-3 text-black/70 leading-relaxed">
-          Every placement has a story. These students prepared with Placement Spark, built their confidence, and turned opportunities into careers. Yours could be next. Results speak louder than promises.
+          Every placement has a story. These students prepared with Placement Spark, built their confidence, and turned opportunities into careers. Yours could be next. <strong>Results speak louder than promises.</strong>
         </p>
       </Reveal>
       <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -293,10 +303,10 @@ export function SuccessStories() {
 
   <div className="rounded-2xl border border-black/5 bg-white p-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
     <div className="text-3xl md:text-4xl font-bold text-[color:var(--color-brand-black)]">
-      95%
+      50+
     </div>
     <div className="mt-2 text-xs uppercase tracking-wider text-black/60">
-      Students Improved Interview Confidence
+      Successful Placements
     </div>
   </div>
 </div>

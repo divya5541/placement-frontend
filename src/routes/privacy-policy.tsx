@@ -123,7 +123,7 @@ function PrivacyPolicyPage() {
                 Placement Spark is a career development platform dedicated to helping students become placement-ready through structured mentorship, resume building, interview preparation, communication development, and industry-oriented guidance.
 Our mission is to bridge the gap between academic learning and industry expectations by providing practical career support and mentorship.
        
-       "Discover Reality. Explore Infinity."
+       "Discover Reality, Explore Infinity."
 
             </p>
           ),

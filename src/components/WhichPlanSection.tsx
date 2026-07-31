@@ -28,6 +28,7 @@ const plans = [
   {
     title: "Squad",
     icon: Rocket,
+    badge: "👥 Recommended",
     color: "border border-black/5 bg-white",
     iconColor: "text-green-600",
     points: [

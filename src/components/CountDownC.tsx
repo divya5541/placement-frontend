@@ -18,11 +18,32 @@ function diff(target: number) {
 }
 
 export function CourseCountdown() {
-  const [t, setT] = useState(() => diff(TARGET));
+  const [mounted, setMounted] = useState(false);
+
+  const [t, setT] = useState({
+  days: 0,
+  hours: 0,
+  minutes: 0,
+  seconds: 0,
+  done: false,
+});
+
+
   useEffect(() => {
-    const id = setInterval(() => setT(diff(TARGET)), 1000);
+    setMounted(true);
+
+    setT(diff(TARGET));
+
+    const id = setInterval(() => {
+      setT(diff(TARGET));
+    }, 1000);
+
     return () => clearInterval(id);
   }, []);
+
+  if (!mounted) {
+    return null;
+  }
 
   const cells: Array<[string, number]> = [
     ["D", t.days],
@@ -30,6 +51,7 @@ export function CourseCountdown() {
     ["M", t.minutes],
     ["S", t.seconds],
   ];
+
 
   return (
     <section className="relative border-b border-black/5 dark:border-white/10 bg-[color:var(--color-brand-yellow-light)] dark:bg-[color:var(--color-brand-black)] overflow-hidden transition-colors duration-300">

@@ -61,8 +61,10 @@ function ResourcesPage() {
 
   setSubmitting(true);
 
+  const API_URL = import.meta.env.VITE_API_URL;
+
   try {
-    const response = await fetch("http://localhost:5000/send-resource", {
+    const response = await fetch(`${API_URL}/send-resource`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

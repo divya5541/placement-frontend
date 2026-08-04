@@ -61,7 +61,7 @@ function ResourcesPage() {
 
   setSubmitting(true);
 
-  const API_URL = import.meta.env.VITE_API_URL;
+  const API_URL = "https://placement-backend-43if.onrender.com";
 
   try {
     const response = await fetch(`${API_URL}/send-resource`, {

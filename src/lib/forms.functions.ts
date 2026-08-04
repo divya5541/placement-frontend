@@ -99,7 +99,9 @@ async function sendSubmissionEmails(p: SubmissionPayload) {
           </p>
         </div>
       `,
+      
     }),
+    
 
     // Email 2: New registration notification to the team
     resend.emails.send({

@@ -3,7 +3,7 @@ import { CalendarClock, ArrowRight, Flame } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 
 // Next cohort start date — update as needed
-const TARGET = new Date("2026-08-08T09:00:00+05:30").getTime();
+const TARGET = new Date("2026-08-15T09:00:00+05:30").getTime();
 
 function diff(target: number) {
   const now = Date.now();
@@ -67,7 +67,7 @@ export function CourseCountdown() {
               <CalendarClock size={11} /> Next Course
             </div>
             <div className="text-xs md:text-sm font-semibold leading-tight text-[color:var(--color-brand-black)] dark:text-white">
-              Placement Accelerator starts <span className="text-[color:var(--color-brand-yellow)]">Aug 08, 2026</span>
+              Placement Accelerator starts <span className="text-[color:var(--color-brand-yellow)]">Aug 15, 2026</span>
             </div>
           </div>
         </div>

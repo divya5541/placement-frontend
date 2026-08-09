@@ -91,81 +91,90 @@ function PricingPage() {
         {/* ============================= */}
 
         <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-          {PLANS.map((p, i) => (
-            <Reveal key={p.name} delay={i * 0.05}>
-              <div
-                className={
-                  "card-lift h-full rounded-2xl p-6 flex flex-col " +
-                  (p.highlight
-                    ? "bg-[color:var(--color-brand-black)] text-white ring-2 ring-[color:var(--color-brand-yellow)]"
-                    : "border border-black/5 bg-white")
-                }
-              >
-                {/* Highlight */}
-                {p.highlight && (
-                  <div className="text-xs font-semibold uppercase tracking-wider text-[color:var(--color-brand-yellow)]">
-                    {p.highlight}
+          {PLANS.map((p, i) => {
+            const planKey = getPlanKey(p.name);
+
+            // Count benefits available for this particular plan
+            const benefitCount = PRICING_FEATURES.filter(
+              (feature) => feature[planKey]
+            ).length;
+
+            return (
+              <Reveal key={p.name} delay={i * 0.05}>
+                <div
+                  className={
+                    "card-lift h-full rounded-2xl p-6 flex flex-col " +
+                    (p.highlight
+                      ? "bg-[color:var(--color-brand-black)] text-white ring-2 ring-[color:var(--color-brand-yellow)]"
+                      : "border border-black/5 bg-white")
+                  }
+                >
+                  {/* Highlight */}
+                  {p.highlight && (
+                    <div className="text-xs font-semibold uppercase tracking-wider text-[color:var(--color-brand-yellow)]">
+                      {p.highlight}
+                    </div>
+                  )}
+
+                  {/* Plan Name */}
+                  <div className="mt-2 text-sm font-semibold opacity-70">
+                    {p.name}
                   </div>
-                )}
 
-                {/* Plan Name */}
-                <div className="mt-2 text-sm font-semibold opacity-70">
-                  {p.name}
+                  {/* Price */}
+                  <div className="mt-1 text-4xl font-bold">
+                    {p.price}
+                    <span className="text-sm font-normal opacity-60">
+                      {p.cadence}
+                    </span>
+                  </div>
+
+                  {/* Tagline */}
+                  <p className="mt-2 text-sm opacity-70">{p.tagline}</p>
+
+                  {/* Main Benefits */}
+                  <ul className="mt-5 space-y-2 text-sm flex-1">
+                    {p.features.map((f) => (
+                      <li key={f} className="flex gap-2">
+                        <Check
+                          size={16}
+                          className="mt-0.5 shrink-0 text-[color:var(--color-brand-yellow)]"
+                        />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* VIEW BENEFITS BUTTON */}
+                  <button
+                    type="button"
+                    onClick={() => setSelectedPlan(planKey)}
+                    className={
+                      "mt-5 flex w-full items-center justify-center text-sm font-semibold transition-colors " +
+                      (p.highlight
+                        ? "text-[color:var(--color-brand-yellow)] hover:text-white"
+                        : "text-black hover:text-[color:var(--color-brand-yellow)]")
+                    }
+                  >
+                    +{benefitCount} More Benefits →
+                  </button>
+
+                  {/* CTA */}
+                  <Link
+                    to="/contact"
+                    className={
+                      "mt-5 text-center rounded-md px-4 py-2.5 text-sm font-semibold " +
+                      (p.highlight
+                        ? "bg-[color:var(--color-brand-yellow)] text-black hover:bg-[#FFB300]"
+                        : "bg-black text-white hover:bg-black/80")
+                    }
+                  >
+                    {p.cta}
+                  </Link>
                 </div>
-
-                {/* Price */}
-                <div className="mt-1 text-4xl font-bold">
-                  {p.price}
-                  <span className="text-sm font-normal opacity-60">
-                    {p.cadence}
-                  </span>
-                </div>
-
-                {/* Tagline */}
-                <p className="mt-2 text-sm opacity-70">{p.tagline}</p>
-
-                {/* Main Benefits */}
-                <ul className="mt-5 space-y-2 text-sm flex-1">
-                  {p.features.map((f) => (
-                    <li key={f} className="flex gap-2">
-                      <Check
-                        size={16}
-                        className="mt-0.5 shrink-0 text-[color:var(--color-brand-yellow)]"
-                      />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-
-                {/* VIEW ALL BENEFITS */}
-                <button
-                  type="button"
-                  onClick={() => setSelectedPlan(getPlanKey(p.name))}
-                  className={
-                    "mt-5 flex w-full items-center justify-center text-sm font-semibold transition-colors " +
-                    (p.highlight
-                      ? "text-[color:var(--color-brand-yellow)] hover:text-white"
-                      : "text-black hover:text-[color:var(--color-brand-yellow)]")
-                  }
-                >
-                  View All Benefits →
-                </button>
-
-                {/* CTA */}
-                <Link
-                  to="/contact"
-                  className={
-                    "mt-5 text-center rounded-md px-4 py-2.5 text-sm font-semibold " +
-                    (p.highlight
-                      ? "bg-[color:var(--color-brand-yellow)] text-black hover:bg-[#FFB300]"
-                      : "bg-black text-white hover:bg-black/80")
-                  }
-                >
-                  {p.cta}
-                </Link>
-              </div>
-            </Reveal>
-          ))}
+              </Reveal>
+            );
+          })}
         </div>
 
         {/* ============================= */}
@@ -179,7 +188,7 @@ function PricingPage() {
             aria-modal="true"
             aria-label={`${selectedPlanData.name} plan benefits`}
           >
-            {/* Modal Container */}
+            {/* Modal */}
             <div className="relative flex max-h-[92vh] w-full max-w-3xl flex-col overflow-hidden rounded-3xl bg-[color:var(--color-brand-black)] text-white shadow-2xl ring-1 ring-white/10">
               {/* ============================= */}
               {/* MODAL HEADER */}
@@ -223,7 +232,9 @@ function PricingPage() {
 
               <div className="min-h-0 flex-1 overflow-y-auto px-5 py-6 md:px-8 md:py-7">
                 <h3 className="mb-5 text-xl font-bold md:text-2xl">
-                  ✨ All Features Included:
+                  ✨ All {PRICING_FEATURES.filter(
+                    (feature) => feature[selectedPlan]
+                  ).length} Features Included:
                 </h3>
 
                 <div className="grid gap-3 sm:grid-cols-2">

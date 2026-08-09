@@ -81,10 +81,10 @@ export type Plan = {
   cta: string;
 };
 export const PLANS: Plan[] = [
-  { name: "Free Trial", price: "FREE", cadence: "", tagline: "See what we do, no strings attached.", features: ["1 Resume review", "1 Career guidance session", "WhatsApp community access"], cta: "Start Free" },
+  { name: "Free Trial", price: "FREE", cadence: "", tagline: "See what we do, no strings attached.", features: ["1 Resume review", "1 Career guidance session", ""], cta: "Start Free" },
   { name: "Solo", price: "₹2299", cadence: "/Student", tagline: "For serious individual prep.", features: ["Everything in Free", "Full resume + ATS + LinkedIn", "2 Mock interviews / month", "WhatsApp mentor support"], cta: "Get Started" },
   { name: "Buddy", price: "₹2199", cadence: "/Student", tagline: "Prep with a friend, save more.", highlight: "Save ₹200", features: ["Everything in Solo", "4 Mock interviews / month", "Priority scheduling", "Save ₹200 with buddy plan"], cta: "Get Started" },
-  { name: "Squad", price: "₹1800", cadence: "/Student", tagline: "Best per-student value for teams of 4+.", highlight: "⭐ Most Popular Save ₹300", features: ["Everything in Buddy", "Group GD training", "Referral discount", "Dedicated squad mentor"], cta: "Get Started" },
+  { name: "Squad", price: "₹1899", cadence: "/Student", tagline: "Best per-student value for teams of 4+.", highlight: "⭐ Most Popular Save ₹300", features: ["Everything in Buddy", "Group GD training", "Referral discount", "Dedicated squad mentor"], cta: "Get Started" },
 ];
 
 export const PRICING_FEATURES: { feature: string; free: boolean; solo: boolean; buddy: boolean; squad: boolean }[] = [

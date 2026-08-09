@@ -69,8 +69,11 @@ async function sendSubmissionEmails(p: SubmissionPayload) {
   const adminEmail =
     process.env.ADMIN_EMAIL ?? "career.placementspark@gmail.com";
 
-  const fromEmail =
-    process.env.RESEND_FROM_EMAIL ?? "onboarding@resend.dev";
+  const fromEmail = process.env.RESEND_FROM_EMAIL;
+
+if (!fromEmail) {
+  throw new Error("RESEND_FROM_EMAIL is not configured");
+}
 
   await Promise.all([
     // Email 1: Registration confirmation to the user

@@ -22,16 +22,16 @@ export const submitRegistration = createServerFn({ method: "POST" })
       throw new Error("Could not save submission");
     }
     // Fire-and-forget emails; do not block user response on email delivery.
-    void sendSubmissionEmails({
-      fullName: data.fullName,
-      email: data.email,
-      phone: data.phone,
-      college: data.college,
-      year: data.year,
-      course: data.course,
-      interests: data.interests,
-      message: data.message,
-    }).catch((e) => console.error("[registration] email failed", e));
+    await sendSubmissionEmails({
+  fullName: data.fullName,
+  email: data.email,
+  phone: data.phone,
+  college: data.college,
+  year: data.year,
+  course: data.course,
+  interests: data.interests,
+  message: data.message,
+});
     return { ok: true };
   });
 
@@ -69,11 +69,8 @@ async function sendSubmissionEmails(p: SubmissionPayload) {
   const adminEmail =
     process.env.ADMIN_EMAIL ?? "career.placementspark@gmail.com";
 
-  const fromEmail = process.env.RESEND_FROM_EMAIL;
-
-if (!fromEmail) {
-  throw new Error("RESEND_FROM_EMAIL is not configured");
-}
+  const fromEmail =
+    process.env.RESEND_FROM_EMAIL ?? "onboarding@resend.dev";
 
   await Promise.all([
     // Email 1: Registration confirmation to the user

@@ -13,6 +13,7 @@ import { CourseCountdown } from "@/components/CountDownC";
 import heroImage from "@/assets/hero.png";
 import shirtImage from "@/assets/shirt.png";
 import { CompanyLogoSlider } from "@/components/CompanyLogoSlider";
+import jorney from "@/assets/Milestone.png";
 
 import {
   FileText,
@@ -37,7 +38,7 @@ function Index() {
         <div className="container-x pt-16 pb-20 md:pt-24 md:pb-28 grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-              <SectionTag>📍 Based in Mumbai | Serving Students Across India</SectionTag>
+              <SectionTag>Empowering students across India with placement-ready skills</SectionTag>
             </motion.div>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -116,32 +117,46 @@ function Index() {
         </div>
       </section>
 
-      {/* ABOUT SNIPPET */}
-      <section className="container-x mt-16 md:mt-24 grid gap-10 md:grid-cols-2 md:items-center">
-        <Reveal>
-          <SectionTag>About</SectionTag>
-          <h2 className="mt-3 text-3xl md:text-4xl font-bold">Your degree gets you shortlisted. Your preparation gets you selected</h2>
-          <p className="mt-4 text-black/70 leading-relaxed">
-            {BUSINESS.name} was built from a simple observation: brilliant students often don't get the placements they deserve because the prep system around them is broken. We fix that with mentorship, structure, and honest feedback — not hype.
-          </p>
-          <Link to="/about" className="btn-ghost mt-6">Read our story</Link>
-        </Reveal>
-        <Reveal delay={0.1}>
-          <div className="rounded-3xl bg-[color:var(--color-brand-grey-light)] p-8 grid grid-cols-2 gap-4">
-            {[
-              { k: "1:1", v: "Mentor sessions" },
-              { k: "6+", v: "Week programs" },
-              { k: "9", v: "Core services" },
-              { k: "24h", v: "Response time" },
-            ].map((s) => (
-              <div key={s.v} className="rounded-2xl bg-white p-5">
-                <div className="text-3xl font-bold">{s.k}</div>
-                <div className="text-xs text-black/60 mt-1">{s.v}</div>
-              </div>
-            ))}
-          </div>
-        </Reveal>
-      </section>
+    {/* ABOUT SNIPPET */}
+<section className="container-x mt-16 md:mt-24 grid gap-10 md:grid-cols-2 md:items-center">
+  <Reveal>
+    <SectionTag>About</SectionTag>
+
+    <h2 className="mt-3 text-3xl md:text-4xl font-bold">
+      Your degree gets you shortlisted. Your preparation gets you selected
+    </h2>
+
+    <p className="mt-4 text-black/70 leading-relaxed">
+      {BUSINESS.name} was built from a simple observation: brilliant students
+      often don't get the placements they deserve because the prep system
+      around them is broken. We fix that with mentorship, structure, and
+      honest feedback — not hype.
+    </p>
+
+    <Link to="/about" className="btn-ghost mt-6">
+      Read our story
+    </Link>
+  </Reveal>
+
+  {/* ABOUT IMAGE */}
+{/* ABOUT IMAGE */}
+  <Reveal delay={0.1}>
+    <div className="rounded-3xl bg-[color:var(--color-brand-grey-light)] p-4 sm:p-6 md:p-8">
+      <div className="group mx-auto max-w-[360px] md:max-w-[480px]">
+        <div className="relative overflow-hidden rounded-3xl shadow-2xl ring-1 ring-black/5 dark:ring-white/10 transition-transform duration-500 group-hover:scale-[1.02] group-hover:-rotate-1">
+          <img
+            src={jorney}
+            alt="PlacementSpark journey"
+            width={1408}
+            height={1104}
+            decoding="async"
+            className="w-full h-auto block object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </Reveal>
+</section>
 
       {/* WHY CHOOSE */}
       <section className="container-x mt-24">
@@ -168,54 +183,59 @@ function Index() {
         </div>
       </section>
 
-      {/* JOURNEY */}
-      <section className="container-x mt-24">
-        <Reveal className="max-w-2xl">
-          <SectionTag>Student Journey</SectionTag>
-          <h2 className="mt-3 text-3xl md:text-4xl font-bold">From confusion to offer, step by step.</h2>
-        </Reveal>
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {JOURNEY.map((j, i) => (
-            <Reveal key={j.step} delay={i * 0.05}>
-              <div className="card-lift relative h-full rounded-2xl bg-[color:var(--color-brand-grey-light)] p-6">
-                <div className="text-4xl font-bold text-[color:var(--color-brand-yellow)]">{j.step}</div>
-                <h3 className="mt-2 font-semibold">{j.title}</h3>
-                <p className="mt-1 text-sm text-black/60 leading-relaxed">{j.desc}</p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </section>
 
-      {/* PROGRAMS */}
-      <section className="container-x mt-24">
-        <div className="flex flex-wrap items-end justify-between gap-4">
-          <Reveal className="max-w-2xl">
-            <SectionTag>Programs</SectionTag>
-            <h2 className="mt-3 text-3xl md:text-4xl font-bold">One Platform. Every Step of Your Placement Journey.</h2>
-            <p className="mt-4 text-black/70 leading-relaxed">Master every stage of your placement journey with expert mentorship, practical guidance, and industry-focused preparation.</p>
-          </Reveal>
-          <Link to="/programs" className="btn-ghost">View all programs <ArrowRight size={18} /></Link>
-        </div>
-        <div className="mt-8 -mx-5 md:mx-0">
-          <div className="flex md:grid md:grid-cols-3 gap-4 overflow-x-auto md:overflow-visible snap-x snap-mandatory px-5 md:px-0 pb-2">
-            {PROGRAMS.map((p, i) => (
-              <Reveal key={p.title} delay={i * 0.04} className="snap-start shrink-0 w-[85%] sm:w-[60%] md:w-auto">
-                <div className="card-lift h-full rounded-2xl border border-black/5 bg-white p-6">
-                  <div className="grid h-11 w-11 place-items-center rounded-xl bg-[color:var(--color-brand-black)] text-[color:var(--color-brand-yellow)]">
-                    <p.icon size={22} />
-                  </div>
-                  <h3 className="mt-4 font-semibold">{p.title}</h3>
-                  <p className="mt-1 text-sm text-black/60">{p.benefit}</p>
-                  <Link to="/programs" className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-black hover:gap-2 transition-all">
-                    Explore <ArrowRight size={16} />
-                  </Link>
-                </div>
-              </Reveal>
-            ))}
+      
+{/* PROGRAMS */}
+<section className="container-x mt-24">
+  <div className="flex flex-wrap items-end justify-between gap-4">
+    <Reveal className="max-w-2xl">
+      <SectionTag>Programs</SectionTag>
+      <h2 className="mt-3 text-3xl md:text-4xl font-bold">
+        One Platform. Every Step of Your Placement Journey.
+      </h2>
+      <p className="mt-4 text-black/70 leading-relaxed">
+        Master every stage of your placement journey with expert mentorship,
+        practical guidance, and industry-focused preparation.
+      </p>
+    </Reveal>
+
+    <Link to="/programs" className="btn-ghost">
+      View all programs <ArrowRight size={18} />
+    </Link>
+  </div>
+
+  <div className="mt-8 -mx-5 md:mx-0">
+    <div className="flex md:grid md:grid-cols-3 gap-4 overflow-x-auto md:overflow-visible snap-x snap-mandatory px-5 md:px-0 pb-2">
+      {PROGRAMS.slice(0, 3).map((p, i) => (
+        <Reveal
+          key={p.title}
+          delay={i * 0.04}
+          className="snap-start shrink-0 w-[85%] sm:w-[60%] md:w-auto"
+        >
+          <div className="card-lift h-full rounded-2xl border border-black/5 bg-white p-6">
+            <div className="grid h-11 w-11 place-items-center rounded-xl bg-[color:var(--color-brand-black)] text-[color:var(--color-brand-yellow)]">
+              <p.icon size={22} />
+            </div>
+
+            <h3 className="mt-4 font-semibold">{p.title}</h3>
+
+            <p className="mt-1 text-sm text-black/60">
+              {p.benefit}
+            </p>
+
+            <Link
+              to="/programs"
+              className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-black hover:gap-2 transition-all"
+            >
+              Explore <ArrowRight size={16} />
+            </Link>
           </div>
-        </div>
-      </section>
+        </Reveal>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* PRICING TEASER */}
       <section className="container-x mt-24">
@@ -295,19 +315,47 @@ function Index() {
 
       <CompanyLogoSlider />
 
-      {/* FAQ SNIPPET */}
-      <section className="container-x mt-24">
-        <Reveal className="max-w-2xl">
-          <SectionTag>FAQ</SectionTag>
-          <h2 className="mt-3 text-3xl md:text-4xl font-bold">Answers to what students ask most.</h2>
-        </Reveal>
-        <div className="mt-8 max-w-3xl">
-          <FaqAccordion items={FAQS[0].items.slice(0, 3)} />
-          <Link to="/faq" className="mt-4 inline-flex items-center gap-1 text-sm font-semibold hover:gap-2 transition-all">
-            See all questions <ArrowRight size={16} />
-          </Link>
-        </div>
-      </section>
+     {/* FAQ SNIPPET */}
+<section className="container-x mt-24">
+  <Reveal className="max-w-2xl">
+    <SectionTag>FAQ</SectionTag>
+
+    <h2 className="mt-3 text-3xl md:text-4xl font-bold">
+      Answers to what students ask most.
+    </h2>
+  </Reveal>
+
+  <div className="mt-8 max-w-3xl">
+    <FaqAccordion items={FAQS[0].items.slice(0, 3)} />
+
+    <Link
+  to="/faq"
+  className="
+    group mt-6 inline-flex items-center gap-2
+    rounded-xl
+    border border-black/10
+    bg-white
+    px-5 py-3
+    text-sm font-semibold
+    text-black
+    shadow-sm
+    transition-all duration-300
+    hover:-translate-y-0.5
+    hover:shadow-lg
+    dark:border-white/10
+    dark:bg-black
+    dark:text-white
+  "
+>
+  See all questions
+  <ArrowRight
+    size={16}
+    className="transition-transform duration-300 group-hover:translate-x-1"
+  />
+</Link>
+  </div> {/* ← Missing div closing tag */}
+
+</section>
 
       <CTABanner />
     </>

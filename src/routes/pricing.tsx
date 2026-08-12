@@ -80,10 +80,9 @@ function PricingPage() {
             group, we've designed a plan that matches your journey.
           </p>
 
-          <p className="mt-2 text-xs text-black/40 uppercase tracking-wider">
-            * Confidence isn't built in the interview room. It's built during
-            preparation.
-          </p>
+          <p className="mt-2 text-xs text-black/40 uppercase tracking-wider font-bold">
+  Confidence isn't built in the interview room. It's built during preparation.
+</p>
         </Reveal>
 
         {/* ============================= */}

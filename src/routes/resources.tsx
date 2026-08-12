@@ -150,7 +150,7 @@ function ResourcesPage() {
               ) : (
                 <>
                   <h3 className="text-xl font-bold">Download "{open}"</h3>
-                  <p className="mt-1 text-sm text-black/60">Enter your email — we'll send it right over.</p>
+                  <p className="mt-1 text-sm text-black/60">Enter your email to instantly download your free resource.</p>
                   <form onSubmit={submit} className="mt-5 space-y-3">
                     <input
                       type="email"

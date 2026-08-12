@@ -65,7 +65,7 @@ export const VALUES: Why[] = [
 export const JOURNEY = [
   { step: "01", title: "Register free", desc: "Tell us about you and your goals in under 2 minutes." },
   { step: "02", title: "Discovery call", desc: "A mentor understands where you are and where you want to be." },
-  { step: "03", title: "Personal plan", desc: "You get a placement plan tailored to your college, course, and timeline." },
+  { step: "03", title: "Personalised plan", desc: "You get a placement plan tailored to your college, course, and timeline." },
   { step: "04", title: "Build & practice", desc: "Resume, LinkedIn, mocks, GDs — one focused week at a time." },
   { step: "05", title: "Apply & interview", desc: "Targeted applications, referrals, and real interview prep." },
   { step: "06", title: "Offer in hand", desc: "Confident interviews, aligned negotiation, and a role you're proud of." },
@@ -75,16 +75,74 @@ export type Plan = {
   name: string;
   price: string;
   cadence: string;
+  duration: string;
   tagline: string;
   highlight?: string;
   features: string[];
   cta: string;
 };
+
 export const PLANS: Plan[] = [
-  { name: "Free Trial", price: "FREE", cadence: "", tagline: "See what we do, no strings attached.", features: ["1 Resume review", "1 Career guidance session", ""], cta: "Start Free" },
-  { name: "Solo", price: "₹2299", cadence: "/Student", tagline: "For serious individual prep.", features: ["Everything in Free", "Full resume + ATS + LinkedIn", "2 Mock interviews / month", "WhatsApp mentor support"], cta: "Get Started" },
-  { name: "Buddy", price: "₹2199", cadence: "/Student", tagline: "Prep with a friend, save more.", highlight: "Save ₹200", features: ["Everything in Solo", "4 Mock interviews / month", "Priority scheduling", "Save ₹200 with buddy plan"], cta: "Get Started" },
-  { name: "Squad", price: "₹1899", cadence: "/Student", tagline: "Best per-student value for teams of 4+.", highlight: "⭐ Most Popular Save ₹300", features: ["Everything in Buddy", "Group GD training", "Referral discount", "Dedicated squad mentor"], cta: "Get Started" },
+  {
+    name: "Free Trial",
+    price: "FREE",
+    cadence: "",
+    duration: "7 Days",
+    tagline: "Get started with a 7-day free trial — no strings attached.",
+    features: [
+      "1 Resume review",
+      "1 Career guidance session",
+      "7 days trial period",
+    ],
+    cta: "Start Free",
+  },
+
+  {
+    name: "Solo",
+    price: "₹2299",
+    cadence: "/Student",
+    duration: "3 Months",
+    tagline: "3 months of focused, personalized placement preparation.",
+    features: [
+      "Everything in Free",
+      "Full resume + ATS + LinkedIn",
+      "2 Mock interviews / month",
+      "WhatsApp mentor support",
+    ],
+    cta: "Get Started",
+  },
+
+  {
+    name: "Buddy",
+    price: "₹2099",
+    cadence: "/Student",
+    duration: "3 Months",
+    tagline: "3 months of placement prep with a friend, at a better value.",
+    highlight: "Save ₹200",
+    features: [
+      "Everything in Solo",
+      "4 Mock interviews / month",
+      "Priority scheduling",
+      "Save ₹200 with buddy plan",
+    ],
+    cta: "Get Started",
+  },
+
+  {
+    name: "Squad",
+    price: "₹1899",
+    cadence: "/Student",
+    duration: "3 Months",
+    tagline: "3 months of premium placement support with the best per-student value.",
+    highlight: "⭐ Most Popular · Save ₹400",
+    features: [
+      "Everything in Buddy",
+      "Group GD training",
+      "Referral discount",
+      "Dedicated squad mentor",
+    ],
+    cta: "Get Started",
+  },
 ];
 
 export const PRICING_FEATURES: { feature: string; free: boolean; solo: boolean; buddy: boolean; squad: boolean }[] = [
@@ -116,7 +174,7 @@ export const FAQS: FaqCategory[] = [
   {
     category: "About Placement Spark",
     items: [
-      { q: "What is Placement Spark?", a: "Placement Spark is a student-focused career development platform based in Mumbai. We help engineering, chemical engineer , and fresh graduates become placement-ready through mentorship, resume building, interview prep, and career guidance." },
+      { q: "What is Placement Spark?", a: "Placement Spark is a student-focused career development platform based in Mumbai. We help engineering, chemical engineer and fresh graduates become placement-ready through mentorship, resume building, interview prep, and career guidance." },
       { q: "Who is Placement Spark for?", a: "Chemical Engineering students and fresh graduates who want structured, honest guidance for placements and early careers." },
       { q: "Where are you based?", a: "We're based in Mumbai, but all our programs are delivered online, so you can join from anywhere in India." },
       { q: "How is Placement Spark different?", a: "We focus on outcomes, not fluff. Every session is 1:1 or small-group, taught by mentors who've actually hired and been hired." },

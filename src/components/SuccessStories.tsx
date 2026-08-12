@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { SectionTag } from "@/components/SectionTag";
+
+import std0 from "../assets/BlankP.png";
 import std1 from "../assets/Vishal.png";
 import std2 from "../assets/Shashank.png";
 import std3 from "../assets/mansi.png";
@@ -11,6 +13,8 @@ import std5 from "../assets/Nirbhay Photo.png";
 import std6 from "../assets/Mayuri.png";
 import std7 from "../assets/prathamesh.png";
 import std8 from "../assets/ayush.png";
+import std9 from "../assets/akash.jpg";
+
 
 
 // company logos
@@ -21,7 +25,8 @@ import Finepac from "@/assets/Finepac.png";
 import Keve from "@/assets/Keva.png";
 import GPE from "@/assets/GPE.jpeg";
 import Lt from "@/assets/LT.png";
-
+import Lubrizol from "@/assets/lubrizol.jpeg";
+import Kuber from "@/assets/kuber.jpg";
 
 
 type Story = {
@@ -42,6 +47,17 @@ const STORIES: Story[] = [
     companyLogo: Adani,
     quote:
       "PlacementSpark mentors guided me throughout my interview preparation and helped me gain confidence to crack the interview.",
+  },
+
+
+  {
+    name: "Akash Patil",
+    company: "GPE",
+    role: "Graduate Engineer Trainee",
+    image: std9,
+    companyLogo: GPE,
+    quote:
+  "With PlacementSpark's guidance and mock interview practice, I improved my preparation and felt confident facing real interviews.",
   },
   
   {
@@ -107,6 +123,38 @@ const STORIES: Story[] = [
     quote:
       "Thanks to the dedicated support of PlacementSpark mentors, I was well-prepared and confident enough to crack my interview.",
   },
+
+  {
+    name: "Aditya Lamture",
+    company: "Lubrizol",
+    role: "Graduate Engineer Trainee",
+    image: std0,
+    companyLogo: Lubrizol,
+    quote:
+  "PlacementSpark gave me the right guidance and practical preparation, helping me build the confidence to crack my interview.",
+  },
+
+  // {
+  //   name: "Hemant Patil",
+  //   company: "Worley",
+  //   role: "Graduate Engineer Trainee",
+  //   image: std0,
+  //   companyLogo: Worley,
+  //   quote:
+  // "The mentors at PlacementSpark guided me at every step and helped me feel more confident and prepared for interviews.",
+  // },
+
+  {
+    name: "Sahil Barhate ",
+    company: "Kuber Precision Tech LLP",
+    role: "Graduate Engineer Trainee",
+    image: std0,
+    companyLogo: Kuber,
+    quote:
+  "The personalized guidance from PlacementSpark helped me improve my resume, interview skills, and overall placement preparation.",
+  },
+
+
 ];
 
 function StoryCard({ story }: { story: Story }) {

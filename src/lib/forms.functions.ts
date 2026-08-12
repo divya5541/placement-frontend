@@ -207,14 +207,14 @@ async function sendSubmissionEmails(p: SubmissionPayload) {
           </p>
 
           <p style="margin:15px 0 5px; font-size:13px;">
-            🌐
-            <a
-              href="https://placement-frontend-mu.vercel.app/"
-              style="color:#6d28d9; text-decoration:none;"
-            >
-              placement-frontend-mu.vercel.app
-            </a>
-          </p>
+  🌐
+  <a
+    href="https://www.placementspark.com/"
+    style="color:#6d28d9; text-decoration:none;"
+  >
+    www.placementspark.com
+  </a>
+</p>
 
           <p style="margin:5px 0; font-size:13px;">
             📧

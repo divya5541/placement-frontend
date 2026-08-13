@@ -67,7 +67,7 @@ export function CourseCountdown() {
               <CalendarClock size={11} /> Next Course
             </div>
             <div className="text-xs md:text-sm font-semibold leading-tight text-[color:var(--color-brand-black)] dark:text-white">
-              Placement Accelerator starts <span className="text-[color:var(--color-brand-yellow)]">Aug 15, 2026</span>
+              Get Placement-Ready — New Batch Starts <span className="text-[color:var(--color-brand-yellow)]">Aug 15, 2026</span>
             </div>
           </div>
         </div>

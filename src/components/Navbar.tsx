@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ThemeToggle } from "./ThemeToggle";
 import logo from "../assets/logo.png";
-import wordmark from "../assets/sparkText.png";
+import wordmark from "../assets/sparkText.jpg";
 import wordmarkDark from "../assets/sparkText.white.png";
 //import wordmarkAsset from "../assets/placement-spark-wordmark.png.asset.json";
 

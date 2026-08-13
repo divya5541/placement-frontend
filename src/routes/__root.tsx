@@ -79,10 +79,11 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
+      
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Placement Spark — Become Placement-Ready" },
-      { name: "description", content: "Crack placements with structured mentorship, ATS-optimized resume building, mock interviews, and industry guidance—designed to help engineering students become interview-ready with confidence." },
+      { name: "description", content: "Crack placements with structured mentorship, ATS-optimized resume building, mock interviews and industry guidance—designed to help engineering students become interview-ready with confidence." },
       { name: "author", content: "Placement Spark" },
       { property: "og:title", content: "Placement Spark — Become Placement-Ready" },
       { property: "og:description", content: "Mentorship-led placement prep for Indian students. Resume, LinkedIn, interviews, and career strategy." },

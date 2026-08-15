@@ -295,7 +295,7 @@ console.log("[registration] User email result:", userResult);
         <h2>🎉 New Registration Received</h2>
 
         <p>
-          <strong>Name:</strong> ${p.fullName}
+          <strong>Name:</strong> ${p.fullName} 
         </p>
 
         <p>

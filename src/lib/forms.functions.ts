@@ -155,10 +155,7 @@ async function sendSubmissionEmails(p: SubmissionPayload) {
             We have successfully received your registration.
           </p>
 
-          <p>
-            Your details have been recorded successfully, and our team will
-            review your registration.
-          </p>
+        
 
           <!-- Highlight Box -->
           <div style="margin:25px 0; padding:18px 20px; background:#f5f3ff; border-left:4px solid #7c3aed; border-radius:6px;">
@@ -167,8 +164,8 @@ async function sendSubmissionEmails(p: SubmissionPayload) {
             </p>
 
             <p style="margin:8px 0 0; color:#555;">
-              Our mentor/team will get in touch with you within
-              <strong>24 hours</strong>.
+              Our mentor/team will get in touch with you shortly.
+              <strong>shortly</strong>.
             </p>
           </div>
 
@@ -182,9 +179,28 @@ async function sendSubmissionEmails(p: SubmissionPayload) {
           </p>
 
           <p>
-            Regards,<br />
-            <strong>Placement Spark Team 🚀</strong>
-          </p>
+  Regards,<br />
+  <strong style="
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 5px;
+  ">
+    <img
+      src="logo.png"
+      alt="Placement Spark"
+      style="
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+        vertical-align: middle;
+      "
+    />
+    <span style="color: #ffffff;">Placement</span>
+    <span style="color: #facc15;">Spark</span>
+    <span style="color: #facc15;">🚀</span>
+  </strong>
+</p>
 
         </div>
 

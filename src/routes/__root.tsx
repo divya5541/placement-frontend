@@ -117,7 +117,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@context": "https://schema.org",
           "@type": "Organization",
           name: "Placement Spark",
-          url: "/",
+          url: "https://www.placementspark.com/",
           email: "career.placementspark@gmail.com",
           telephone: "+917057606291",
           address: { "@type": "PostalAddress", addressLocality: "Mumbai", addressRegion: "MH", addressCountry: "IN" },

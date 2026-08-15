@@ -165,7 +165,7 @@ async function sendSubmissionEmails(p: SubmissionPayload) {
 
             <p style="margin:8px 0 0; color:#555;">
               Our mentor/team will get in touch with you shortly.
-              <strong>shortly</strong>.
+              // <strong>shortly</strong>.
             </p>
           </div>
 

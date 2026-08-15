@@ -214,7 +214,7 @@ async function sendSubmissionEmails(p: SubmissionPayload) {
             "
           >
             <img
-              src="https://placementspark.com/YOUR-LOGO-FILENAME.png"
+              src="https://placementspark.com/logo.png"
               alt="Placement Spark"
               width="28"
               height="28"

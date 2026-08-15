@@ -178,29 +178,84 @@ async function sendSubmissionEmails(p: SubmissionPayload) {
             Keep learning, keep preparing, and keep growing! 🚀
           </p>
 
-          <p>
-  Regards,<br />
-  <strong style="
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    margin-top: 5px;
-  ">
-    <img
-      src="logo.png"
-      alt="Placement Spark"
+          <table
+  role="presentation"
+  cellpadding="0"
+  cellspacing="0"
+  border="0"
+  style="margin:0; padding:0;"
+>
+  <tr>
+    <td
       style="
-        width: 24px;
-        height: 24px;
-        object-fit: contain;
-        vertical-align: middle;
+        font-family:Arial, Helvetica, sans-serif;
+        font-size:14px;
+        line-height:22px;
+        color:#333333;
+        padding:0;
       "
-    />
-    <span style="color: #ffffff;">Placement</span>
-    <span style="color: #facc15;">Spark</span>
-    <span style="color: #facc15;">🚀</span>
-  </strong>
-</p>
+    >
+      Regards,<br />
+
+      <table
+        role="presentation"
+        cellpadding="0"
+        cellspacing="0"
+        border="0"
+        style="margin:5px 0 0 0; padding:0;"
+      >
+        <tr>
+
+          <!-- LOGO -->
+          <td
+            style="
+              padding:0 8px 0 0;
+              vertical-align:middle;
+            "
+          >
+            <img
+              src="https://placementspark.com/YOUR-LOGO-FILENAME.png"
+              alt="Placement Spark"
+              width="28"
+              height="28"
+              style="
+                display:block;
+                width:28px;
+                height:28px;
+                border:0;
+                outline:none;
+                text-decoration:none;
+              "
+            />
+          </td>
+
+          <!-- BRAND NAME -->
+          <td
+            style="
+              padding:0;
+              vertical-align:middle;
+              font-family:Arial, Helvetica, sans-serif;
+              font-size:16px;
+              line-height:22px;
+              font-weight:bold;
+            "
+          >
+            <span style="color:#111827;">
+              Placement
+            </span>
+            <span style="color:#facc15;">
+              Spark
+            </span>
+            <span style="color:#facc15;">
+              🚀
+            </span>
+          </td>
+
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
 
         </div>
 
@@ -295,7 +350,7 @@ console.log("[registration] User email result:", userResult);
         <h2>🎉 New Registration Received</h2>
 
         <p>
-          <strong>Name:</strong> ${p.fullName} 
+          <strong>Name:</strong> ${p.fullName}
         </p>
 
         <p>

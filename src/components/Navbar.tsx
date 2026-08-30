@@ -10,11 +10,11 @@ import wordmarkDark from "../assets/sparkText.white.png";
 
 const links = [
   { to: "/", label: "Home" },
-  { to: "/about", label: "About" },
+  // { to: "/about", label: "About" },
   { to: "/programs", label: "Programs" },
   { to: "/pricing", label: "Pricing" },
   { to: "/resources", label: "Resources" },
-  { to: "/faq", label: "FAQ" },
+  // { to: "/faq", label: "FAQ" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
@@ -71,7 +71,7 @@ export function Navbar() {
             </Link>
           ))}
           <ThemeToggle className="ml-1" />
-          <Link to="/contact" className="btn-primary ml-2 text-sm">Register Free</Link>
+          <Link to="/contact" className="btn-primary ml-2 text-sm">Get Started</Link>
         </nav>
 
         <div className="lg:hidden flex items-center gap-2">

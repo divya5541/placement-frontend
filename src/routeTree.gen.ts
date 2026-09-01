@@ -19,6 +19,7 @@ import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as ProgramsRouteImport } from './routes/programs'
 import { Route as RefundPolicyRouteImport } from './routes/refund-policy'
 import { Route as ResourcesRouteImport } from './routes/resources'
+import { Route as ResumeAnalyzerRouteImport } from './routes/resume-analyzer'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TermsAndConditionsRouteImport } from './routes/terms-and-conditions'
 
@@ -72,6 +73,11 @@ const ResourcesRoute = ResourcesRouteImport.update({
   path: '/resources',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ResumeAnalyzerRoute = ResumeAnalyzerRouteImport.update({
+  id: '/resume-analyzer',
+  path: '/resume-analyzer',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
@@ -94,6 +100,7 @@ export interface FileRoutesByFullPath {
   '/programs': typeof ProgramsRoute
   '/refund-policy': typeof RefundPolicyRoute
   '/resources': typeof ResourcesRoute
+  '/resume-analyzer': typeof ResumeAnalyzerRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms-and-conditions': typeof TermsAndConditionsRoute
 }
@@ -108,6 +115,7 @@ export interface FileRoutesByTo {
   '/programs': typeof ProgramsRoute
   '/refund-policy': typeof RefundPolicyRoute
   '/resources': typeof ResourcesRoute
+  '/resume-analyzer': typeof ResumeAnalyzerRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms-and-conditions': typeof TermsAndConditionsRoute
 }
@@ -123,6 +131,7 @@ export interface FileRoutesById {
   '/programs': typeof ProgramsRoute
   '/refund-policy': typeof RefundPolicyRoute
   '/resources': typeof ResourcesRoute
+  '/resume-analyzer': typeof ResumeAnalyzerRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms-and-conditions': typeof TermsAndConditionsRoute
 }
@@ -139,6 +148,7 @@ export interface FileRouteTypes {
     | '/programs'
     | '/refund-policy'
     | '/resources'
+    | '/resume-analyzer'
     | '/sitemap.xml'
     | '/terms-and-conditions'
   fileRoutesByTo: FileRoutesByTo
@@ -153,6 +163,7 @@ export interface FileRouteTypes {
     | '/programs'
     | '/refund-policy'
     | '/resources'
+    | '/resume-analyzer'
     | '/sitemap.xml'
     | '/terms-and-conditions'
   id:
@@ -167,6 +178,7 @@ export interface FileRouteTypes {
     | '/programs'
     | '/refund-policy'
     | '/resources'
+    | '/resume-analyzer'
     | '/sitemap.xml'
     | '/terms-and-conditions'
   fileRoutesById: FileRoutesById
@@ -182,6 +194,7 @@ export interface RootRouteChildren {
   ProgramsRoute: typeof ProgramsRoute
   RefundPolicyRoute: typeof RefundPolicyRoute
   ResourcesRoute: typeof ResourcesRoute
+  ResumeAnalyzerRoute: typeof ResumeAnalyzerRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsAndConditionsRoute: typeof TermsAndConditionsRoute
 }
@@ -258,6 +271,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ResourcesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/resume-analyzer': {
+      id: '/resume-analyzer'
+      path: '/resume-analyzer'
+      fullPath: '/resume-analyzer'
+      preLoaderRoute: typeof ResumeAnalyzerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
@@ -286,6 +306,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProgramsRoute: ProgramsRoute,
   RefundPolicyRoute: RefundPolicyRoute,
   ResourcesRoute: ResourcesRoute,
+  ResumeAnalyzerRoute: ResumeAnalyzerRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsAndConditionsRoute: TermsAndConditionsRoute,
 }

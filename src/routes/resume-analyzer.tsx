@@ -2112,12 +2112,7 @@ function ScoreInsightCard({
   description: string;
 }) {
   function getScoreLabel(score: number): ReactNode {
-    if (score >= 90) return "Excellent";
-    if (score >= 75) return "Strong";
-    if (score >= 60) return "Good";
-    if (score >= 45) return "Fair";
-    if (score >= 25) return "Needs improvement";
-    return "Low";
+    throw new Error("Function not implemented.");
   }
 
   return (

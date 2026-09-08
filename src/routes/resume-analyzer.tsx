@@ -21,13 +21,34 @@ export const Route = createFileRoute("/resume-analyzer")({
    TYPES
 ========================================================= */
 
-interface ScoreData {
-  ats?: number;
-  jobMatch?: number;
-  content?: number;
-  skills?: number;
-  formatting?: number;
-  projects?: number;
+interface AIAnalysis {
+  overallScore?: number;
+
+  scores?: {
+    ats?: number;
+    jobMatch?: number;
+    skills?: number;
+    content?: number;
+    formatting?: number;
+    projects?: number;
+  };
+
+  formattingAnalysis?: {
+    score?: number;
+    issues?: string[];
+  };
+
+  skillsDetected?: string[];
+  keywordsDetected?: string[];
+  missingSections?: string[];
+
+  jobRoleMatch?: {
+    score?: number;
+    explanation?: string;
+  };
+
+  improvementSuggestions?: string[];
+  overallSummary?: string;
 }
 
 interface CandidateData {
@@ -298,20 +319,19 @@ function ResumeAnalyzerPage() {
      ANALYZE RESUME
   ========================================================= */
 
-  const handleAnalyze = async () => {
+const handleAnalyze = async () => {
   if (!resumeFile) {
     setError("Please upload your resume first.");
     return;
   }
 
   if (!jobRole.trim()) {
-    setError("Please enter the target job role.");
+    setError("Please enter the job role.");
     return;
   }
 
-  setError("");
   setLoading(true);
-  setAnalysisResult(null);
+  setError(null);
 
   try {
     const formData = new FormData();
@@ -320,25 +340,74 @@ function ResumeAnalyzerPage() {
     formData.append("jobRole", jobRole.trim());
     formData.append("jobDescription", jobDescription.trim());
 
-    
+    const apiUrl = import.meta.env.VITE_API_URL;
 
-    const response = await fetch(
-  `${import.meta.env.VITE_API_URL}/api/resume/analyze`,
-  {
-    method: "POST",
-    body: formData,
-  }
-);
-    if (!response.ok) {
+    if (!apiUrl) {
       throw new Error(
-        "Failed to analyze resume."
+        "VITE_API_URL is missing. Please check your frontend .env file."
       );
     }
 
-    const data = await response.json();
+    const response = await fetch(
+      `${apiUrl.replace(/\/$/, "")}/api/resume/analyze`,
+      {
+        method: "POST",
+        body: formData,
+      }
+    );
 
-    console.log("Resume analysis response:", data);
-    console.log("AI analysis:", data.analysis);
+    /*
+     * Read the response safely.
+     * This helps us see the REAL backend error instead of
+     * only showing "Failed to analyze resume."
+     */
+    const responseText = await response.text();
+
+    let data: any = null;
+
+    try {
+      data = responseText ? JSON.parse(responseText) : null;
+    } catch {
+      console.error(
+        "Backend returned a non-JSON response:",
+        responseText
+      );
+    }
+
+    if (!response.ok) {
+      console.error("Resume API error:", {
+        status: response.status,
+        statusText: response.statusText,
+        response: responseText,
+      });
+
+      const backendMessage =
+        data?.error ||
+        data?.message ||
+        responseText ||
+        response.statusText ||
+        "Unknown backend error";
+
+      throw new Error(
+        `Resume analysis failed (${response.status}): ${backendMessage}`
+      );
+    }
+
+    if (!data) {
+      throw new Error(
+        "The backend returned an empty response."
+      );
+    }
+
+    console.log(
+      "FULL RESUME API RESPONSE:",
+      data
+    );
+
+    console.log(
+      "FULL AI ANALYSIS:",
+      JSON.stringify(data.analysis, null, 2)
+    );
 
     if (!data.analysis) {
       throw new Error(
@@ -346,9 +415,85 @@ function ResumeAnalyzerPage() {
       );
     }
 
+    const ai = data.analysis;
+
     setAnalysisResult({
-      ...data.analysis,
+  overallScore: ai.overallScore ?? 0,
+
+  scores: {
+    ats: ai.scores?.ats ?? 0,
+    jobMatch: ai.scores?.jobMatch ?? 0,
+    skills: ai.scores?.skills ?? 0,
+    content: ai.scores?.content ?? 0,
+    formatting: ai.scores?.formatting ?? 0,
+    projects: ai.scores?.projects ?? 0,
+  },
+
+      skills: {
+        matched: ai.skillsDetected ?? [],
+        missing: ai.missingSkills ?? [],
+        recommended: ai.recommendedSkills ?? [],
+        technical: ai.skillsDetected ?? [],
+        frontend: ai.frontendSkills ?? [],
+        backend: ai.backendSkills ?? [],
+        databases: ai.databaseSkills ?? [],
+        tools: ai.toolsSkills ?? [],
+      },
+
+      keywords: {
+        matched: ai.keywordsDetected ?? [],
+        missing: ai.missingKeywords ?? [],
+        recommended: ai.recommendedKeywords ?? [],
+      },
+
+      sections: {
+        summary: {
+          score: ai.formattingAnalysis?.score ?? 0,
+          feedback: ai.overallSummary ?? "",
+          issues: ai.formattingAnalysis?.issues ?? [],
+          suggestions: ai.improvementSuggestions ?? [],
+        },
+      },
+
+      strengths: [
+        ...(ai.strengths ?? []),
+        ...(ai.skillsDetected ?? []).slice(0, 3),
+      ],
+
+      weaknesses: [
+        ...(ai.weaknesses ?? []),
+        ai.jobRoleMatch?.explanation ?? "",
+        ...(ai.formattingAnalysis?.issues ?? []),
+      ].filter(Boolean),
+
+      improvements: ai.improvementSuggestions ?? [],
+
+      optimizationPlan:
+        ai.optimizationPlan ??
+        ai.improvementSuggestions ??
+        [],
+
+      redFlags:
+        ai.redFlags ??
+        ai.formattingAnalysis?.issues ??
+        [],
+
       resume: data.resume,
+
+      extractedText: data.extractedText,
+
+      /*
+       * Keep the original AI fields too.
+       * This prevents useful backend data from being lost.
+       */
+      atsScore: ai.atsScore,
+      formattingAnalysis: ai.formattingAnalysis,
+      skillsDetected: ai.skillsDetected,
+      keywordsDetected: ai.keywordsDetected,
+      missingSections: ai.missingSections,
+      jobRoleMatch: ai.jobRoleMatch,
+      improvementSuggestions: ai.improvementSuggestions,
+      overallSummary: ai.overallSummary,
     });
 
     setActiveTab("overview");
@@ -364,6 +509,8 @@ function ResumeAnalyzerPage() {
     setLoading(false);
   }
 };
+
+
 
   /* =========================================================
      HELPERS
@@ -2111,9 +2258,13 @@ function ScoreInsightCard({
   icon: string;
   description: string;
 }) {
-  function getScoreLabel(score: number): ReactNode {
-    throw new Error("Function not implemented.");
-  }
+  
+  function getScoreLabel(score: number): string {
+  if (score >= 80) return "Excellent";
+  if (score >= 70) return "Good";
+  if (score >= 60) return "Needs Improvement";
+  return "Needs Attention";
+}
 
   return (
     <Card>

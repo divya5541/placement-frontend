@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ThemeToggle } from "./ThemeToggle";
 import logo from "../assets/logo.png";
 import wordmark from "../assets/sparkText.jpg";
-import wordmarkDark from "../assets/sparkText.white.png";
+import wordmarkDark from "../assets/sparkText.white.jpeg";
 //import wordmarkAsset from "../assets/placement-spark-wordmark.png.asset.json";
 
 const links = [

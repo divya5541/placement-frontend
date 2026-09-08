@@ -37,7 +37,7 @@ export const PROGRAMS: Program[] = [
   { icon: Linkedin, title: "LinkedIn Optimization💼", benefit: "Appear in recruiter searches", description: "Rewrite your headline, About, and Experience so recruiters actually find you and reach out first." },
   { icon: MessageSquare, title: "Mock Interviews🎤", benefit: "Crack interviews confidently", description: "1:1 mock sessions with detailed feedback on body language, tone, structure, and content." },
   { icon: Users, title: "Group Discussions👥", benefit: "Ace campus GD rounds", description: "Practice with real prompts, learn to lead without dominating, and stand out in the top 3." },
-  { icon: Layers, title: "Technical Interview Prep💻", benefit: "Clear technical rounds", description: "Chemical Engineering student passionate about process optimization, sustainable technologies, and industrial innovation." },
+  { icon: Layers, title: "Technical Interview Prep💻", benefit: "Clear technical rounds", description: "Prepare for technical interviews across engineering disciplines with branch-specific concepts, problem-solving, projects, and industry-relevant questions." },
   { icon: Presentation, title: "HR Interview Preparation💼", benefit: "Win HR rounds", description: "Frameworks for the tough behavioural questions, salary talk, and 'why should we hire you'." },
   { icon: Target, title: "Career Guidance🎯", benefit: "Choose the right path", description: "Confused between roles, higher studies, or startups? Get honest, unbiased 1:1 advice." },
   { icon: Rocket, title: "Placement Strategy🚀", benefit: "Maximize offer chances", description: "A personalized plan across companies, roles, timelines, and referrals — so nothing is left to luck." },
@@ -174,8 +174,8 @@ export const FAQS: FaqCategory[] = [
   {
     category: "About Placement Spark",
     items: [
-      { q: "What is Placement Spark?", a: "Placement Spark is a student-focused career development platform based in Mumbai. We help engineering, chemical engineer and fresh graduates become placement-ready through mentorship, resume building, interview prep, and career guidance." },
-      { q: "Who is Placement Spark for?", a: "Chemical Engineering students and fresh graduates who want structured, honest guidance for placements and early careers." },
+      { q: "What is Placement Spark?", a: "Placement Spark is a student-focused career development platform based in Mumbai. We help engineering students from all branches and fresh graduates become placement-ready through mentorship, resume building, interview preparation, and career guidance." },
+      { q: "Who is Placement Spark for?", a: "Engineering students from all branches and fresh graduates who want structured, practical guidance for placements and early careers." },
       { q: "Where are you based?", a: "We're based in Mumbai, but all our programs are delivered online, so you can join from anywhere in India." },
       { q: "How is Placement Spark different?", a: "We focus on outcomes, not fluff. Every session is 1:1 or small-group, taught by mentors who've actually hired and been hired." },
     ],
@@ -184,7 +184,7 @@ export const FAQS: FaqCategory[] = [
     category: "Eligibility & Programs",
     items: [
       { q: "Which years of study can join?", a: "Anyone from 1st year to final year, plus recent graduates. Earlier is better — you get more time to build." },
-      { q: "Do you support non-tech students?", a: "Yes. chemical Engineers, fresh graduates and other disciplines are welcome. We tailor the program to your target roles." },
+      { q: "Do you support non-tech students?", a: "Yes. Students from all engineering branches, non-tech disciplines, and fresh graduates are welcome. We tailor the program to your branch, skills, and target roles." },
       { q: "Can I pick individual programs?", a: "Absolutely. You can start with Resume Building or Mock Interviews on their own, or combine them under a plan." },
       { q: "How long does a program take?", a: "Most programs run over 2–6 weeks. Placement strategy plans span your active placement season." },
     ],
@@ -219,8 +219,10 @@ export const FAQS: FaqCategory[] = [
   {
     category: "Technical & Career",
     items: [
-      { q: "Which companies recruit Chemical Engineering students ?", a: "Chemical Engineering graduates can apply to companies in oil & gas, petrochemicals, fertilizers, pharmaceuticals, FMCG, food processing, energy, and specialty chemicals." },
-      { q: "I'm confused about my career direction. Can you help?", a: "That's exactly what our Career Guidance program is for. We start from your interests and constraints, not a template." },
+      {
+  q: "Which companies and roles can engineering students target?",
+  a: "Engineering students from different branches can target opportunities across core engineering, IT and software, consulting, manufacturing, automation, energy, infrastructure, finance, FMCG, pharmaceuticals, and other industries depending on their skills, interests, and career goals."
+},
       { q: "Do you help with off-campus roles?", a: "Yes. Our Placement Strategy plan covers off-campus applications, referrals, and interview cadence." },
     ],
   },

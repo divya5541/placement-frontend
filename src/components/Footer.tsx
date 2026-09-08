@@ -13,17 +13,30 @@ export function Footer() {
       </div>
       <div className="container-x py-14 grid gap-10 md:grid-cols-4">
         <div>
-          <div className="flex items-center gap-2 font-display font-bold text-lg">
-            <img src={logo} alt="Placement Spark" className="h-9 w-9 rounded-md" />
-            Placement Spark
-          </div>
-          <p className="mt-3 text-sm font-semibold text-[color:var(--color-brand-yellow)]">
-            Discover Reality, Explore Infinity.
-          </p>
-          <p className="mt-3 text-sm text-white/70 max-w-xs">
-            Preparing Careers, Not Just Placements. Talent deserves opportunity — we help students bridge the gap between campus learning and industry expectations.
-          </p>
-        </div>
+  <div className="flex items-center gap-2 font-display font-bold text-lg">
+    <img src={logo} alt="Placement Spark" className="h-9 w-9 rounded-md" />
+    Placement Spark
+  </div>
+
+  {/* Company Legal Information */}
+  <div className="mt-3">
+    <p className="text-sm font-bold text-white">
+      Placement Spark Edutech Private Limited
+    </p>
+
+    <p className="mt-1 text-xs font-semibold text-[color:var(--color-brand-yellow)]">
+      CIN: <span className="font-bold">U78300PN2026PTC259466</span>
+    </p>
+  </div>
+
+  <p className="mt-3 text-sm font-semibold text-[color:var(--color-brand-yellow)]">
+    Discover Reality, Explore Infinity.
+  </p>
+
+  <p className="mt-3 text-sm text-white/70 max-w-xs">
+    Preparing Careers, Not Just Placements. Talent deserves opportunity — we help students bridge the gap between campus learning and industry expectations.
+  </p>
+</div>
         <div>
           <h4 className="text-sm font-semibold text-white/90 mb-3">Quick Links</h4>
           <ul className="space-y-2 text-sm text-white/70">

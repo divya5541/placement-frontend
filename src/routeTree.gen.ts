@@ -14,6 +14,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as FaqRouteImport } from './routes/faq'
+import { Route as FeedbackRouteImport } from './routes/feedback'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as ProgramsRouteImport } from './routes/programs'
@@ -46,6 +47,11 @@ const ContactRoute = ContactRouteImport.update({
 const FaqRoute = FaqRouteImport.update({
   id: '/faq',
   path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FeedbackRoute = FeedbackRouteImport.update({
+  id: '/feedback',
+  path: '/feedback',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PricingRoute = PricingRouteImport.update({
@@ -95,6 +101,7 @@ export interface FileRoutesByFullPath {
   '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
+  '/feedback': typeof FeedbackRoute
   '/pricing': typeof PricingRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/programs': typeof ProgramsRoute
@@ -110,6 +117,7 @@ export interface FileRoutesByTo {
   '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
+  '/feedback': typeof FeedbackRoute
   '/pricing': typeof PricingRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/programs': typeof ProgramsRoute
@@ -126,6 +134,7 @@ export interface FileRoutesById {
   '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
+  '/feedback': typeof FeedbackRoute
   '/pricing': typeof PricingRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/programs': typeof ProgramsRoute
@@ -143,6 +152,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/contact'
     | '/faq'
+    | '/feedback'
     | '/pricing'
     | '/privacy-policy'
     | '/programs'
@@ -158,6 +168,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/contact'
     | '/faq'
+    | '/feedback'
     | '/pricing'
     | '/privacy-policy'
     | '/programs'
@@ -173,6 +184,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/contact'
     | '/faq'
+    | '/feedback'
     | '/pricing'
     | '/privacy-policy'
     | '/programs'
@@ -189,6 +201,7 @@ export interface RootRouteChildren {
   BlogRoute: typeof BlogRoute
   ContactRoute: typeof ContactRoute
   FaqRoute: typeof FaqRoute
+  FeedbackRoute: typeof FeedbackRoute
   PricingRoute: typeof PricingRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   ProgramsRoute: typeof ProgramsRoute
@@ -234,6 +247,13 @@ declare module '@tanstack/react-router' {
       path: '/faq'
       fullPath: '/faq'
       preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/feedback': {
+      id: '/feedback'
+      path: '/feedback'
+      fullPath: '/feedback'
+      preLoaderRoute: typeof FeedbackRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pricing': {
@@ -301,6 +321,7 @@ const rootRouteChildren: RootRouteChildren = {
   BlogRoute: BlogRoute,
   ContactRoute: ContactRoute,
   FaqRoute: FaqRoute,
+  FeedbackRoute: FeedbackRoute,
   PricingRoute: PricingRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   ProgramsRoute: ProgramsRoute,

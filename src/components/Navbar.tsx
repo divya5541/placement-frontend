@@ -14,6 +14,7 @@ const links = [
   { to: "/programs", label: "Programs" },
   { to: "/pricing", label: "Pricing" },
   { to: "/resources", label: "Resources" },
+  { to: "/feedback", label: "Feedback" },
   // { to: "/faq", label: "FAQ" },
   { to: "/contact", label: "Contact" },
 ] as const;
@@ -107,7 +108,7 @@ export function Navbar() {
                 </Link>
               ))}
               <Link to="/contact" className="btn-primary mt-2 text-sm" onClick={() => setOpen(false)}>
-                Register Free
+                Get Started
               </Link>
             </div>
           </motion.div>

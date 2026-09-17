@@ -27,41 +27,21 @@ const YEARS = ["1st Year", "2nd Year", "3rd Year", "Final Year", "Graduate"] as 
 const COURSES = [
   // Chemical & closely related
   "Chemical Engineering",
-  "Petrochemical Engineering",
-  "Petroleum Engineering",
-  "Oil & Gas Engineering",
-  "Polymer Engineering",
-  "Plastic Engineering",
-  "Pharmaceutical Engineering",
-  "Food Technology / Food Engineering",
-  "Environmental Engineering",
-  "Biotechnology Engineering",
+  
 
   // Core Engineering
   "Mechanical Engineering",
-  "Production Engineering",
-  "Industrial Engineering",
-  "Automobile Engineering",
-  "Mechatronics Engineering",
-  "Instrumentation Engineering",
 
   // Electrical & Electronics
   "Electrical Engineering",
-  "Electronics Engineering",
-  "Electronics & Telecommunication Engineering",
-  "Electronics & Instrumentation Engineering",
-
+  
   // Civil & Infrastructure
   "Civil Engineering",
-  "Construction Engineering",
+ 
 
   // Computer & IT
   "Computer Science & Engineering",
-  "Computer Engineering",
-  "Information Technology",
-  "Artificial Intelligence & Machine Learning",
-  "Artificial Intelligence & Data Science",
-  "Data Science",
+  
 
   // Emerging Engineering
   "Robotics & Automation",

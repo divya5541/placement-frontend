@@ -51,7 +51,7 @@ const STORIES: Story[] = [
 
 
   {
-    name: "Akash Patil",
+    name: "Akash Phalke",
     company: "GPE",
     role: "Graduate Engineer Trainee",
     image: std9,

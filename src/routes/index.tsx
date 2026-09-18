@@ -14,7 +14,6 @@ import heroImage from "@/assets/hero.png";
 import shirtImage from "@/assets/shirt.png";
 import { CompanyLogoSlider } from "@/components/CompanyLogoSlider";
 import jorney from "@/assets/Milestone.png";
-import Feedback from "../components/Feedback";
 
 import {
   FileText,

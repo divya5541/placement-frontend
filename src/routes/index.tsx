@@ -21,6 +21,7 @@ import {
   Linkedin,
   Mic,
 } from "lucide-react";
+import { FeedbackSlider } from "@/components/FeedbackSlider";
 
 
 export const Route = createFileRoute("/")({
@@ -314,6 +315,8 @@ function Index() {
       <SuccessStories />
 
       <CompanyLogoSlider />
+
+      <FeedbackSlider />
 
      {/* FAQ SNIPPET */}
 <section className="container-x mt-24">

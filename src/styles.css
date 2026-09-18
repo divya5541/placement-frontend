@@ -309,3 +309,11 @@
   transition: transform 250ms ease, box-shadow 250ms ease;
   &:hover { transform: translateY(-3px); box-shadow: 0 12px 30px -10px rgba(255,193,7,0.5); }
 }
+
+.animate-logo-scroll:hover {
+  animation-play-state: paused !important;
+}
+
+.animate-logo-scroll.feedback-modal-open {
+  animation-play-state: paused !important;
+}

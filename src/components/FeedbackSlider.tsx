@@ -3,6 +3,9 @@ import { useState } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Reveal } from "./Reveal";
 
+
+import Fb13 from "@/assets/Feedback/fb13.jpeg";
+import Fb14 from "@/assets/Feedback/fb14.jpeg";
 import Fb1 from "@/assets/Feedback/fb1.jpeg";
 import Fb2 from "@/assets/Feedback/fb2.jpeg";
 import Fb3 from "@/assets/Feedback/fb3.jpeg";
@@ -15,6 +18,8 @@ import Fb9 from "@/assets/Feedback/fb9.jpeg";
 import Fb10 from "@/assets/Feedback/fb10.jpeg";
 import Fb11 from "@/assets/Feedback/fb11.jpeg";
 import Fb12 from "@/assets/Feedback/fb12.jpeg";
+
+
 
 const feedbackImages = [
   Fb1,
@@ -29,6 +34,8 @@ const feedbackImages = [
   Fb10,
   Fb11,
   Fb12,
+  Fb13,
+  Fb14
 ];
 
 export function FeedbackSlider() {
@@ -84,87 +91,107 @@ export function FeedbackSlider() {
         {/* =====================================================
             FEEDBACK SLIDER
         ====================================================== */}
-        <div
-          className="
-            relative
-            mt-10
-            overflow-hidden
-          "
-        >
-          <div
-  className={`flex animate-logo-scroll ${
-    selectedImage !== null ? "feedback-modal-open" : ""
-  }`}
->
-            {[...feedbackImages, ...feedbackImages].map(
-              (image, index) => {
-                const actualIndex =
-                  index % feedbackImages.length;
+        <div className="relative mt-10 overflow-hidden">
+  <div
+    className={`flex animate-logo-scroll ${
+      selectedImage !== null ? "feedback-modal-open" : ""
+    }`}
+  >
+    {[...feedbackImages, ...feedbackImages].map(
+      (image, index) => {
+        const actualIndex = index % feedbackImages.length;
 
-                return (
-                  <div
-                    key={index}
-                    className="
-                      group
-                      mx-2
-                      flex
-                      h-[320px]
-                      w-[210px]
-                      shrink-0
-                      cursor-pointer
-                      items-center
-                      justify-center
-                      overflow-hidden
-                      rounded-2xl
-                      border
-                      border-black/5
-                      bg-white
-                      p-2
-                      shadow-sm
-                      transition-all
-                      duration-300
-                      hover:-translate-y-1
-                      hover:shadow-xl
-                    "
-                    onClick={() =>
-                      openImage(actualIndex)
-                    }
-                  >
-                    {/* Image container */}
-                    <div
-                      className="
-                        flex
-                        h-full
-                        w-full
-                        items-center
-                        justify-center
-                        overflow-hidden
-                        rounded-xl
-                        bg-gray-50
-                      "
-                    >
-                      <img
-                        src={image}
-                        alt={`Student placement feedback ${
-                          actualIndex + 1
-                        }`}
-                        className="
-                          max-h-full
-                          max-w-full
-                          object-contain
-                          rounded-lg
-                          transition-transform
-                          duration-300
-                          group-hover:scale-[1.03]
-                        "
-                      />
-                    </div>
-                  </div>
-                );
-              }
-            )}
+        return (
+          <div
+            key={index}
+            className="
+              group
+              relative
+              mx-2
+              flex
+              h-[320px]
+              w-[210px]
+              shrink-0
+              cursor-pointer
+              items-center
+              justify-center
+              overflow-hidden
+              rounded-2xl
+              border
+              border-black/5
+              bg-white
+              p-2
+              shadow-sm
+              transition-all
+              duration-300
+              hover:-translate-y-1
+              hover:shadow-xl
+            "
+            onClick={() => openImage(actualIndex)}
+          >
+            {/* Recent Feedback Label */}
+            {actualIndex >= 12 && (
+  <div
+    className="
+      absolute
+      left-3
+      top-3
+      z-10
+      inline-flex
+      items-center
+      gap-1.5
+      rounded-full
+      border
+      border-orange-200
+      bg-white/95
+      px-3
+      py-1.5
+      text-[10px]
+      font-semibold
+      tracking-wider
+      text-orange-600
+      shadow-sm
+      backdrop-blur-sm
+    "
+  >
+    <span className="h-1.5 w-1.5 rounded-full bg-orange-500" />
+    RECENT FEEDBACK
+  </div>
+)}
+
+            {/* Image container */}
+            <div
+              className="
+                flex
+                h-full
+                w-full
+                items-center
+                justify-center
+                overflow-hidden
+                rounded-xl
+                bg-gray-50
+              "
+            >
+              <img
+                src={image}
+                alt={`Student placement feedback ${actualIndex + 1}`}
+                className="
+                  max-h-full
+                  max-w-full
+                  object-contain
+                  rounded-lg
+                  transition-transform
+                  duration-300
+                  group-hover:scale-[1.03]
+                "
+              />
+            </div>
           </div>
-        </div>
+        );
+      }
+    )}
+  </div>
+</div>
 
         {/* Small instruction */}
         <p className="mt-5 text-center text-sm text-black/50">

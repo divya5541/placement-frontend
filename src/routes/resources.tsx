@@ -42,6 +42,9 @@ function ResourcesPage() {
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [phone, setPhone] = useState(""); 
+  const [phoneError, setPhoneError] = useState<string | null>(null);
+  const [fullName, setFullName] = useState("");
   //const capture = useServerFn(captureResourceEmail);
 
   const submit = async (e: React.FormEvent) => {
@@ -55,11 +58,21 @@ function ResourcesPage() {
   });
 
   if (!parsed.success) {
-    setError(parsed.error.issues[0].message);
-    return;
-  }
+  setError(parsed.error.issues[0].message);
+  return;
+}
 
-  setSubmitting(true);
+// Phone number validation
+const cleanPhone = phone.trim();
+
+if (!/^\+?[0-9\s()-]{10,20}$/.test(cleanPhone)) {
+  setPhoneError("Please enter a valid phone number.");
+  return;
+}
+
+setPhoneError(null);
+
+setSubmitting(true);
 
   const API_URL = "https://placement-backend-43if.onrender.com";
 
@@ -70,9 +83,11 @@ function ResourcesPage() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        email: parsed.data.email,
-        resource: parsed.data.resource,
-      }),
+  full_name: fullName.trim(),
+  email: parsed.data.email,
+  phone: cleanPhone,
+  resource: parsed.data.resource,
+}),
     });
 
     const result = await response.json();
@@ -91,7 +106,16 @@ function ResourcesPage() {
   }
 };
 
-  const close = () => { setOpen(null); setEmail(""); setDone(false); setError(null); };
+  
+const close = () => {
+  setOpen(null);
+  setFullName("");
+  setEmail("");
+  setPhone("");
+  setDone(false);
+  setError(null);
+  setPhoneError(null);
+};
 
   return (
     <>
@@ -160,7 +184,32 @@ function ResourcesPage() {
                       placeholder="you@college.edu"
                       className="w-full rounded-md border border-black/15 bg-white px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--color-brand-yellow)]"
                     />
+                    <input
+  type="text"
+  required
+  value={fullName}
+  onChange={(e) => setFullName(e.target.value)}
+  placeholder="Enter your full name"
+  autoComplete="name"
+  className="w-full rounded-md border border-black/15 bg-white px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--color-brand-yellow)]"
+/>
+
+
+<input
+  type="tel"
+  required
+  value={phone}
+  onChange={(e) => {
+    setPhone(e.target.value);
+    setPhoneError(null);
+  }}
+  placeholder="Enter your phone number"
+  autoComplete="tel"
+  className="w-full rounded-md border border-black/15 bg-white px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--color-brand-yellow)]"
+/>
+
                     {error && <p className="text-xs text-red-600">{error}</p>}
+                    {phoneError && <p className="text-xs text-red-600">{phoneError}</p>}
                     <button disabled={submitting} className="btn-primary w-full text-sm">
                       {submitting ? "Sending..." : (<><Download size={16} /> Send me the download</>)}
                     </button>

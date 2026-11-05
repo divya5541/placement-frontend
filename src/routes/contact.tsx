@@ -119,31 +119,32 @@ function ContactPage() {
                 {errors.email && <p className="text-xs text-red-600 mt-1">{errors.email}</p>}
               </div>
               <div>
-  <label className="text-xs font-semibold text-black/70">
-    Phone Number *
-  </label>
+                <label className="text-xs font-semibold text-black/70">
+  Phone (Country Code) *
+</label>
 
-  <input
-    required
-    type="tel"
-    inputMode="tel"
-    className={field + " mt-1"}
-    placeholder="e.g. +91 9876XXXXXX"
-    value={form.phone}
-    onChange={(e) =>
-      setForm({
-        ...form,
-        phone: e.target.value.replace(/[^\d+]/g, ""),
-      })
-    }
-  />
+<input
+  required
+  type="tel"
+  inputMode="tel"
+  maxLength={16}
+  className={field + " mt-1"}
+  placeholder="e.g. +91 9876543210"
+  value={form.phone}
+  onChange={(e) =>
+    setForm({
+      ...form,
+      phone: e.target.value
+        .replace(/[^\d+]/g, "")
+        .replace(/(?!^)\+/g, ""),
+    })
+  }
+/>
 
-  {errors.phone && (
-    <p className="text-xs text-red-600 mt-1">
-      {errors.phone}
-    </p>
-  )}
-</div>
+{errors.phone && (
+  <p className="text-xs text-red-600 mt-1">{errors.phone}</p>
+)}
+              </div>
 
               <div className="sm:col-span-2">
                 <label className="text-xs font-semibold text-black/70">College / University *</label>

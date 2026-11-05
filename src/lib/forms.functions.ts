@@ -6,7 +6,7 @@ import {
 } from "./validation";
 
 export const submitRegistration = createServerFn({ method: "POST" })
-  .inputValidator((data: unknown) => registrationSchema.parse(data))
+  .validator((data: unknown) => registrationSchema.parse(data))
   .handler(async ({ data }) => {
     if (data.website) return { ok: true };
 
@@ -51,7 +51,7 @@ export const submitRegistration = createServerFn({ method: "POST" })
   });
 
 export const submitContact = createServerFn({ method: "POST" })
-  .inputValidator((data: unknown) => contactSchema.parse(data))
+  .validator((data: unknown) => contactSchema.parse(data))
   .handler(async ({ data }) => {
     if (data.website) return { ok: true };
 
@@ -64,7 +64,7 @@ export const submitContact = createServerFn({ method: "POST" })
   });
 
 export const captureResourceEmail = createServerFn({ method: "POST" })
-  .inputValidator((data: unknown) => resourceEmailSchema.parse(data))
+  .validator((data: unknown) => resourceEmailSchema.parse(data))
   .handler(async ({ data }) => {
     console.log("[resource]", data);
 
